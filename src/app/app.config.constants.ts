@@ -11,8 +11,11 @@ const _APP_CONFIG = {
   // Short name for mobile displays
   shortName: 'AudioScribe',
 
-  // App Store link (update with actual app ID when available)
-  appStoreUrl: 'https://apps.apple.com/app/audio-scribe',
+  // App Store link (set once the app ID is available)
+  appStoreUrl: '',
+
+  // Fallback while App Store URL is pending
+  launchUpdatesUrl: 'mailto:support@audioscribe.app?subject=Notify%20me%20when%20Audio%20Scribe%20launches',
 
   // Support email
   supportEmail: 'support@audioscribe.app',

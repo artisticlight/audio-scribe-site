@@ -101,6 +101,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      margin-bottom: 16px;
 
       a {
         color: var(--sys-on-surface-variant);
@@ -113,9 +114,33 @@
       }
     }
 
+    .locale-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        color: var(--sys-on-surface-variant);
+      }
+
+      a {
+        color: var(--sys-primary);
+        font-weight: 600;
+      }
+    }
+
     .app-store-badge {
       height: 40px;
       width: auto;
+    }
+
+    [mat-stroked-button] {
+      margin-top: 12px;
+
+      mat-icon {
+        margin-right: 8px;
+      }
     }
   }
 

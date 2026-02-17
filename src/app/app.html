@@ -59,23 +59,34 @@
       <button
         mat-icon-button
         (click)="toggleDarkMode()"
-        [matTooltip]="isDarkMode() ? tooltipLightMode : tooltipDarkMode"
+        [attr.title]="isDarkMode() ? tooltipLightMode : tooltipDarkMode"
         aria-label="Toggle dark mode">
         <mat-icon>{{ isDarkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
       </button>
 
-      <a
-        mat-raised-button
-        color="accent"
-        [href]="config.appStoreUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="download-button hide-mobile"
-        title="Download Audio Scribe on the App Store (opens in new tab)"
-        aria-label="Download Audio Scribe on the App Store (opens in new tab)">
-        <mat-icon>download</mat-icon>
-        <span i18n>Download</span>
-      </a>
+      @if (hasAppStoreUrl) {
+        <a
+          mat-raised-button
+          color="accent"
+          [href]="config.appStoreUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="download-button hide-mobile"
+          title="Download Audio Scribe on the App Store (opens in new tab)"
+          aria-label="Download Audio Scribe on the App Store (opens in new tab)">
+          <mat-icon>download</mat-icon>
+          <span i18n>Download</span>
+        </a>
+      } @else {
+        <a
+          mat-stroked-button
+          color="primary"
+          [href]="config.launchUpdatesUrl"
+          class="download-button hide-mobile">
+          <mat-icon>email</mat-icon>
+          <span i18n>Get Launch Updates</span>
+        </a>
+      }
     </mat-toolbar>
 
     <main class="main-content">
@@ -96,23 +107,37 @@
               <a routerLink="/support" i18n>Support</a>
               <a routerLink="/privacy" i18n>Privacy Policy</a>
             </nav>
+            <div class="locale-links" aria-label="Language selector">
+              <span i18n>Language:</span>
+              @for (locale of localeLinks; track locale.code) {
+                <a [href]="locale.href" [attr.lang]="locale.code">{{ locale.label }}</a>
+              }
+            </div>
           </div>
           <div class="footer-section">
             <h4 i18n>Download</h4>
-            <a
-              [href]="config.appStoreUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="app-store-link"
-              title="Download on the App Store (opens in new tab)">
-              <img
-                [src]="config.appStoreBadgePath"
-                alt="Download on the App Store"
-                class="app-store-badge"
-                width="120"
-                height="40"
-                loading="lazy" />
-            </a>
+            @if (hasAppStoreUrl) {
+              <a
+                [href]="config.appStoreUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="app-store-link"
+                title="Download on the App Store (opens in new tab)">
+                <img
+                  [src]="config.appStoreBadgePath"
+                  alt="Download on the App Store"
+                  class="app-store-badge"
+                  width="120"
+                  height="40"
+                  loading="lazy" />
+              </a>
+            } @else {
+              <p i18n>App Store link coming soon.</p>
+              <a mat-stroked-button [href]="config.launchUpdatesUrl">
+                <mat-icon>email</mat-icon>
+                <span i18n>Notify Me</span>
+              </a>
+            }
           </div>
         </div>
         <div class="footer-bottom">

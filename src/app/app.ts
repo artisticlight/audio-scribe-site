@@ -5,10 +5,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { APP_CONFIG } from './app.config.constants';
 
 const STORAGE_KEY = 'audio-scribe:darkMode';
+const SUPPORTED_LOCALES = ['en', 'es', 'fr'] as const;
 
 @Component({
   selector: 'app-root',
@@ -22,8 +22,7 @@ const STORAGE_KEY = 'audio-scribe:darkMode';
     MatIconModule,
     MatListModule,
     MatSidenavModule,
-    MatToolbarModule,
-    MatTooltipModule
+    MatToolbarModule
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
@@ -33,6 +32,8 @@ export class App implements OnDestroy {
   protected readonly currentYear = new Date().getFullYear();
   protected readonly tooltipLightMode = $localize`Switch to light mode`;
   protected readonly tooltipDarkMode = $localize`Switch to dark mode`;
+  protected readonly hasAppStoreUrl = this.config.appStoreUrl.trim().length > 0;
+  protected readonly localeLinks = this.buildLocaleLinks();
 
   isDarkMode = signal(this.getInitialDarkMode());
   isSidenavOpen = signal(false);
@@ -105,6 +106,30 @@ export class App implements OnDestroy {
   }
 
   private applyDarkMode(isDark: boolean): void {
+    if (typeof document === 'undefined') return;
     document.documentElement.classList.toggle('dark', isDark);
+  }
+
+  private buildLocaleLinks(): { label: string; code: string; href: string }[] {
+    const rootPath = this.getLocaleRootPath();
+    return [
+      { label: 'EN', code: 'en', href: rootPath },
+      { label: 'ES', code: 'es', href: `${rootPath}es/` },
+      { label: 'FR', code: 'fr', href: `${rootPath}fr/` }
+    ];
+  }
+
+  private getLocaleRootPath(): string {
+    if (typeof document === 'undefined') return '/';
+
+    const pathSegments = new URL(document.baseURI).pathname.split('/').filter(Boolean);
+    const lastSegment = pathSegments.at(-1);
+
+    if (lastSegment && SUPPORTED_LOCALES.includes(lastSegment as typeof SUPPORTED_LOCALES[number])) {
+      pathSegments.pop();
+    }
+
+    if (pathSegments.length === 0) return '/';
+    return `/${pathSegments.join('/')}/`;
   }
 }

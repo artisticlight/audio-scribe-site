@@ -1,5 +1,1204 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
-  <file original="ng.template" id="ngi18n">
+  <file id="ngi18n" original="ng.template">
+    <unit id="8439955599488894226">
+      <notes>
+        <note category="location">src/app/app.html:24,25</note>
+        <note category="location">src/app/app.html:108,109</note>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:11,12</note>
+      </notes>
+      <segment>
+        <source>Privacy Policy</source>
+      </segment>
+    </unit>
+    <unit id="8440128775129354214">
+      <notes>
+        <note category="location">src/app/app.html:56,57</note>
+      </notes>
+      <segment>
+        <source>Privacy</source>
+      </segment>
+    </unit>
+    <unit id="3099741642167775297">
+      <notes>
+        <note category="location">src/app/app.html:78,79</note>
+        <note category="location">src/app/app.html:118,119</note>
+      </notes>
+      <segment>
+        <source>Download</source>
+      </segment>
+    </unit>
+    <unit id="958111849724009274">
+      <notes>
+        <note category="location">src/app/app.html:87,88</note>
+        <note category="location">src/app/pages/home/home.component.html:30,31</note>
+      </notes>
+      <segment>
+        <source>Get Launch Updates</source>
+      </segment>
+    </unit>
+    <unit id="3039327863205753484">
+      <notes>
+        <note category="location">src/app/app.html:101,102</note>
+      </notes>
+      <segment>
+        <source>Professional voice transcription for Mac, iPad, and iPhone.</source>
+      </segment>
+    </unit>
+    <unit id="1140327701924892323">
+      <notes>
+        <note category="location">src/app/app.html:104,105</note>
+      </notes>
+      <segment>
+        <source>Quick Links</source>
+      </segment>
+    </unit>
+    <unit id="4895326106573044490">
+      <notes>
+        <note category="location">src/app/app.html:106,107</note>
+        <note category="location">src/app/app.ts:45</note>
+        <note category="location">src/app/pages/documentation/documentation.component.html:4,5</note>
+      </notes>
+      <segment>
+        <source>Documentation</source>
+      </segment>
+    </unit>
+    <unit id="2288513108450439427">
+      <notes>
+        <note category="location">src/app/app.html:107,108</note>
+        <note category="location">src/app/app.ts:46</note>
+        <note category="location">src/app/pages/support/support.component.html:2,3</note>
+      </notes>
+      <segment>
+        <source>Support</source>
+      </segment>
+    </unit>
+    <unit id="3579205080796663296">
+      <notes>
+        <note category="location">src/app/app.html:111,112</note>
+      </notes>
+      <segment>
+        <source>Language:</source>
+      </segment>
+    </unit>
+    <unit id="4068402886047027529">
+      <notes>
+        <note category="location">src/app/app.html:135,136</note>
+      </notes>
+      <segment>
+        <source>App Store link coming soon.</source>
+      </segment>
+    </unit>
+    <unit id="5167047587266870578">
+      <notes>
+        <note category="location">src/app/app.html:138,139</note>
+        <note category="location">src/app/pages/about/about.component.ts:76,77</note>
+        <note category="location">src/app/pages/home/home.component.html:121,122</note>
+      </notes>
+      <segment>
+        <source>Notify Me</source>
+      </segment>
+    </unit>
+    <unit id="3704426281480438191">
+      <notes>
+        <note category="location">src/app/app.html:144</note>
+      </notes>
+      <segment>
+        <source>All rights reserved.</source>
+      </segment>
+    </unit>
+    <unit id="4608015944298801142">
+      <notes>
+        <note category="location">src/app/app.ts:35</note>
+      </notes>
+      <segment>
+        <source>Switch to light mode</source>
+      </segment>
+    </unit>
+    <unit id="803131845720356706">
+      <notes>
+        <note category="location">src/app/app.ts:36</note>
+      </notes>
+      <segment>
+        <source>Switch to dark mode</source>
+      </segment>
+    </unit>
+    <unit id="2821179408673282599">
+      <notes>
+        <note category="location">src/app/app.ts:44</note>
+      </notes>
+      <segment>
+        <source>Home</source>
+      </segment>
+    </unit>
+    <unit id="1726363342938046830">
+      <notes>
+        <note category="location">src/app/app.ts:47</note>
+      </notes>
+      <segment>
+        <source>About</source>
+      </segment>
+    </unit>
+    <unit id="3174354408404578867">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:13,15</note>
+      </notes>
+      <segment>
+        <source>About <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/></source>
+      </segment>
+    </unit>
+    <unit id="5399499545497226596">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:17,19</note>
+      </notes>
+      <segment>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/> is a professional voice transcription application designed exclusively for Apple devices. Our mission is to make voice-to-text conversion accessible, accurate, and private. </source>
+      </segment>
+    </unit>
+    <unit id="524150294818971224">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:24,25</note>
+      </notes>
+      <segment>
+        <source>Our Mission</source>
+      </segment>
+    </unit>
+    <unit id="2850826793309034662">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:26,29</note>
+      </notes>
+      <segment>
+        <source> We believe that voice transcription should be simple, accurate, and respect your privacy. That&apos;s why we built <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/> to process everything locally on your device, ensuring your audio never leaves your control. </source>
+      </segment>
+    </unit>
+    <unit id="2371043107256001232">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:34,35</note>
+      </notes>
+      <segment>
+        <source>Our Values</source>
+      </segment>
+    </unit>
+    <unit id="3946393485152934212">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:38,39</note>
+        <note category="location">src/app/pages/home/home.component.ts:43</note>
+      </notes>
+      <segment>
+        <source>Privacy First</source>
+      </segment>
+    </unit>
+    <unit id="7708449437264702579">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:39,40</note>
+      </notes>
+      <segment>
+        <source>Your audio stays on your device. Period.</source>
+      </segment>
+    </unit>
+    <unit id="1322586333669103999">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:43,44</note>
+      </notes>
+      <segment>
+        <source>Performance</source>
+      </segment>
+    </unit>
+    <unit id="7552731650774392436">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:44,45</note>
+      </notes>
+      <segment>
+        <source>Lightning-fast transcription with minimal latency.</source>
+      </segment>
+    </unit>
+    <unit id="5881345780447901198">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:48,49</note>
+      </notes>
+      <segment>
+        <source>User Focused</source>
+      </segment>
+    </unit>
+    <unit id="4386754215230743284">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:49,50</note>
+      </notes>
+      <segment>
+        <source>Designed with real users in mind.</source>
+      </segment>
+    </unit>
+    <unit id="3209056610537919480">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:53,54</note>
+      </notes>
+      <segment>
+        <source>Quality</source>
+      </segment>
+    </unit>
+    <unit id="2286159927960831590">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:54,55</note>
+      </notes>
+      <segment>
+        <source>High accuracy across 50+ languages.</source>
+      </segment>
+    </unit>
+    <unit id="6843837253200826524">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:60,61</note>
+      </notes>
+      <segment>
+        <source>Ready to Try <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/>?</source>
+      </segment>
+    </unit>
+    <unit id="855588790236945560">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:62,63</note>
+      </notes>
+      <segment>
+        <source>Download now from the App Store.</source>
+      </segment>
+    </unit>
+    <unit id="2546056375199150466">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:70,71</note>
+      </notes>
+      <segment>
+        <source>Download on App Store</source>
+      </segment>
+    </unit>
+    <unit id="6961049824348703051">
+      <notes>
+        <note category="location">src/app/pages/about/about.component.ts:73,74</note>
+      </notes>
+      <segment>
+        <source>The App Store listing is coming soon. Join the launch list for updates.</source>
+      </segment>
+    </unit>
+    <unit id="9156212170228959929">
+      <notes>
+        <note category="location">src/app/pages/documentation/documentation.component.ts:24</note>
+      </notes>
+      <segment>
+        <source>Getting Started</source>
+      </segment>
+    </unit>
+    <unit id="6599364831830861985">
+      <notes>
+        <note category="location">src/app/pages/documentation/documentation.component.ts:25</note>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:10,12</note>
+        <note category="location">src/app/pages/home/home.component.html:57,58</note>
+      </notes>
+      <segment>
+        <source>Features</source>
+      </segment>
+    </unit>
+    <unit id="2806917038528218276">
+      <notes>
+        <note category="location">src/app/pages/documentation/documentation.component.ts:26</note>
+      </notes>
+      <segment>
+        <source>FAQ</source>
+      </segment>
+    </unit>
+    <unit id="9221730911539762110">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:12,14</note>
+      </notes>
+      <segment>
+        <source>Frequently Asked Questions</source>
+      </segment>
+    </unit>
+    <unit id="5496735276304803333">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:17</note>
+      </notes>
+      <segment>
+        <source>Is my audio data sent to the cloud?</source>
+      </segment>
+    </unit>
+    <unit id="6202596825641256333">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:20,21</note>
+      </notes>
+      <segment>
+        <source> No. All transcription processing happens locally on your device. Your audio never leaves your device, ensuring complete privacy. </source>
+      </segment>
+    </unit>
+    <unit id="5587368009017990317">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:27</note>
+      </notes>
+      <segment>
+        <source>Which languages are supported?</source>
+      </segment>
+    </unit>
+    <unit id="34371486403450055">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:30,32</note>
+      </notes>
+      <segment>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/> supports over 50 languages including English, Spanish, French, German, Italian, Portuguese, Japanese, Korean, and Chinese. Check the Features section for the complete list. </source>
+      </segment>
+    </unit>
+    <unit id="6552271952413700188">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:38</note>
+      </notes>
+      <segment>
+        <source>Do I need an internet connection?</source>
+      </segment>
+    </unit>
+    <unit id="646201308963537">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:41,42</note>
+      </notes>
+      <segment>
+        <source> No internet connection is required for transcription. The app works entirely offline. You only need internet for iCloud sync and initial app download. </source>
+      </segment>
+    </unit>
+    <unit id="7145596169100248066">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:48</note>
+      </notes>
+      <segment>
+        <source>How do I export my transcriptions?</source>
+      </segment>
+    </unit>
+    <unit id="7346297470220655879">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:51,52</note>
+      </notes>
+      <segment>
+        <source> Tap the share button on any transcription to export it as TXT, PDF, DOCX, or RTF format. You can also copy the text directly to your clipboard. </source>
+      </segment>
+    </unit>
+    <unit id="3526331506739359689">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:58</note>
+      </notes>
+      <segment>
+        <source>Is there a subscription fee?</source>
+      </segment>
+    </unit>
+    <unit id="8426348452659789771">
+      <notes>
+        <note category="location">src/app/pages/documentation/faq/faq.component.ts:61,63</note>
+      </notes>
+      <segment>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/> is a one-time purchase with no subscription required. All future updates are included with your purchase. </source>
+      </segment>
+    </unit>
+    <unit id="4293050067730109627">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:13,14</note>
+      </notes>
+      <segment>
+        <source>Real-time Transcription</source>
+      </segment>
+    </unit>
+    <unit id="3980117794840200782">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:15,16</note>
+      </notes>
+      <segment>
+        <source> Experience instant speech-to-text conversion as you speak. Our advanced AI processes your voice in real-time with minimal latency. </source>
+      </segment>
+    </unit>
+    <unit id="2968755674678517322">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:21,22</note>
+      </notes>
+      <segment>
+        <source>Offline Processing</source>
+      </segment>
+    </unit>
+    <unit id="7578637509395179869">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:23,24</note>
+      </notes>
+      <segment>
+        <source> All transcription happens locally on your device. Your audio never leaves your device, ensuring maximum privacy and security. </source>
+      </segment>
+    </unit>
+    <unit id="4783988364940500348">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:29,30</note>
+        <note category="location">src/app/pages/home/home.component.ts:53</note>
+      </notes>
+      <segment>
+        <source>Multi-language Support</source>
+      </segment>
+    </unit>
+    <unit id="694442655881688426">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:31,33</note>
+      </notes>
+      <segment>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/> supports over 50 languages and dialects, including: </source>
+      </segment>
+    </unit>
+    <unit id="1400156302847572599">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:34,35</note>
+      </notes>
+      <segment>
+        <source>English (US, UK, Australian)</source>
+      </segment>
+    </unit>
+    <unit id="4181301338971052383">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:35,36</note>
+      </notes>
+      <segment>
+        <source>Spanish (Spain, Latin America)</source>
+      </segment>
+    </unit>
+    <unit id="7633754075223722162">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:36,37</note>
+      </notes>
+      <segment>
+        <source>French</source>
+      </segment>
+    </unit>
+    <unit id="1858110241312746425">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:37,38</note>
+      </notes>
+      <segment>
+        <source>German</source>
+      </segment>
+    </unit>
+    <unit id="2935232983274991580">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:38,39</note>
+      </notes>
+      <segment>
+        <source>Italian</source>
+      </segment>
+    </unit>
+    <unit id="153799456510623899">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:39,40</note>
+      </notes>
+      <segment>
+        <source>Portuguese</source>
+      </segment>
+    </unit>
+    <unit id="6924606686202701860">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:40,41</note>
+      </notes>
+      <segment>
+        <source>Japanese</source>
+      </segment>
+    </unit>
+    <unit id="6145439649200570157">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:41,42</note>
+      </notes>
+      <segment>
+        <source>Korean</source>
+      </segment>
+    </unit>
+    <unit id="8180888914367492266">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:42,43</note>
+      </notes>
+      <segment>
+        <source>Chinese (Mandarin, Cantonese)</source>
+      </segment>
+    </unit>
+    <unit id="4513038738186647612">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:47,48</note>
+        <note category="location">src/app/pages/home/home.component.ts:48</note>
+      </notes>
+      <segment>
+        <source>Export Options</source>
+      </segment>
+    </unit>
+    <unit id="3888178838050658550">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:49,50</note>
+      </notes>
+      <segment>
+        <source> Export your transcriptions in multiple formats: </source>
+      </segment>
+    </unit>
+    <unit id="5456754098414593831">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:52,53</note>
+      </notes>
+      <segment>
+        <source>Plain Text (.txt)</source>
+      </segment>
+    </unit>
+    <unit id="3231848115299132033">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:53,54</note>
+      </notes>
+      <segment>
+        <source>PDF Document</source>
+      </segment>
+    </unit>
+    <unit id="889103625201656319">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:54,55</note>
+      </notes>
+      <segment>
+        <source>Microsoft Word (.docx)</source>
+      </segment>
+    </unit>
+    <unit id="2678347826175393339">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:55,56</note>
+      </notes>
+      <segment>
+        <source>Rich Text Format (.rtf)</source>
+      </segment>
+    </unit>
+    <unit id="3473482029371225025">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:60,61</note>
+      </notes>
+      <segment>
+        <source>iCloud Sync</source>
+      </segment>
+    </unit>
+    <unit id="1610230866679620888">
+      <notes>
+        <note category="location">src/app/pages/documentation/features/features.component.ts:62,63</note>
+      </notes>
+      <segment>
+        <source> Your transcriptions sync seamlessly across all your Apple devices via iCloud. Start on your iPhone, continue on your Mac, and access from your iPad. </source>
+      </segment>
+    </unit>
+    <unit id="6687207536188440435">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:11,13</note>
+      </notes>
+      <segment>
+        <source>Getting Started with <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/></source>
+      </segment>
+    </unit>
+    <unit id="7419787782755641631">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:14,15</note>
+      </notes>
+      <segment>
+        <source>Installation</source>
+      </segment>
+    </unit>
+    <unit id="2895253533843127636">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:16,19</note>
+      </notes>
+      <segment>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/> is available on the Apple App Store for Mac, iPad, and iPhone. Simply search for &quot;<ph id="1" equiv="INTERPOLATION" disp="{{ config.name }}"/>&quot; or click the download link. </source>
+      </segment>
+    </unit>
+    <unit id="4976476980323037949">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:22,23</note>
+      </notes>
+      <segment>
+        <source>First Steps</source>
+      </segment>
+    </unit>
+    <unit id="3623231644084868499">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:24,25</note>
+      </notes>
+      <segment>
+        <source>Open <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/> on your device</source>
+      </segment>
+    </unit>
+    <unit id="4010043825748330058">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:25,26</note>
+      </notes>
+      <segment>
+        <source>Grant microphone permissions when prompted</source>
+      </segment>
+    </unit>
+    <unit id="539972781558248024">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:26,27</note>
+      </notes>
+      <segment>
+        <source>Tap the record button to start transcribing</source>
+      </segment>
+    </unit>
+    <unit id="871970036662433461">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:27,28</note>
+      </notes>
+      <segment>
+        <source>Speak clearly into your device&apos;s microphone</source>
+      </segment>
+    </unit>
+    <unit id="1317986656720173822">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:28,29</note>
+      </notes>
+      <segment>
+        <source>Tap stop when finished to see your transcription</source>
+      </segment>
+    </unit>
+    <unit id="1565233640324233249">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:33,34</note>
+      </notes>
+      <segment>
+        <source>System Requirements</source>
+      </segment>
+    </unit>
+    <unit id="3400868952922610532">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:35,36</note>
+      </notes>
+      <segment>
+        <source>macOS 14.0 or later</source>
+      </segment>
+    </unit>
+    <unit id="8881373625202119485">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:36,37</note>
+      </notes>
+      <segment>
+        <source>iOS 17.0 or later</source>
+      </segment>
+    </unit>
+    <unit id="7865083900671931956">
+      <notes>
+        <note category="location">src/app/pages/documentation/getting-started/getting-started.component.ts:37,38</note>
+      </notes>
+      <segment>
+        <source>iPadOS 17.0 or later</source>
+      </segment>
+    </unit>
+    <unit id="3781788759917560325">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:5,6</note>
+      </notes>
+      <segment>
+        <source>Transform Your Voice into Text</source>
+      </segment>
+    </unit>
+    <unit id="3261825358973130378">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:7,8</note>
+      </notes>
+      <segment>
+        <source> Professional-grade voice transcription for Mac, iPad, and iPhone. Powered by AI, designed for privacy. </source>
+      </segment>
+    </unit>
+    <unit id="9211820520950774341">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:21,22</note>
+      </notes>
+      <segment>
+        <source>Download on the App Store</source>
+      </segment>
+    </unit>
+    <unit id="7002955679222677443">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:37,38</note>
+      </notes>
+      <segment>
+        <source>Learn More</source>
+      </segment>
+    </unit>
+    <unit id="1995019160602262419">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:58,60</note>
+      </notes>
+      <segment>
+        <source>Everything you need for professional voice transcription</source>
+      </segment>
+    </unit>
+    <unit id="5562497748561030218">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:79,80</note>
+      </notes>
+      <segment>
+        <source>Available on All Your Devices</source>
+      </segment>
+    </unit>
+    <unit id="1446952605818952854">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:80,82</note>
+      </notes>
+      <segment>
+        <source>Seamless experience across Apple ecosystem</source>
+      </segment>
+    </unit>
+    <unit id="823491072360486263">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:86</note>
+      </notes>
+      <segment>
+        <source>Mac</source>
+      </segment>
+    </unit>
+    <unit id="690653321437094562">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:86,87</note>
+      </notes>
+      <segment>
+        <source>Full-featured desktop experience</source>
+      </segment>
+    </unit>
+    <unit id="3594995842713776514">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:90,91</note>
+      </notes>
+      <segment>
+        <source>iPad</source>
+      </segment>
+    </unit>
+    <unit id="7239614695521474444">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:91,92</note>
+      </notes>
+      <segment>
+        <source>Optimized for iPad and iPad Pro</source>
+      </segment>
+    </unit>
+    <unit id="7314952904765950496">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:95,96</note>
+      </notes>
+      <segment>
+        <source>iPhone</source>
+      </segment>
+    </unit>
+    <unit id="5429034093728565660">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:96,97</note>
+      </notes>
+      <segment>
+        <source>Record and transcribe on the go</source>
+      </segment>
+    </unit>
+    <unit id="1197301315027749923">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:105,106</note>
+      </notes>
+      <segment>
+        <source>Ready to Get Started?</source>
+      </segment>
+    </unit>
+    <unit id="3738162863075954221">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:107,109</note>
+      </notes>
+      <segment>
+        <source>Download <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/> from the App Store today.</source>
+      </segment>
+    </unit>
+    <unit id="332026513454632763">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:115,116</note>
+      </notes>
+      <segment>
+        <source>Download Now</source>
+      </segment>
+    </unit>
+    <unit id="1868313542965037811">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.html:118,119</note>
+      </notes>
+      <segment>
+        <source>App Store listing coming soon. Join the launch list for updates.</source>
+      </segment>
+    </unit>
+    <unit id="320661990673729299">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.ts:28</note>
+      </notes>
+      <segment>
+        <source>Accurate Transcription</source>
+      </segment>
+    </unit>
+    <unit id="5389088757393097870">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.ts:29</note>
+      </notes>
+      <segment>
+        <source>Advanced AI-powered speech recognition for accurate voice-to-text conversion.</source>
+      </segment>
+    </unit>
+    <unit id="4392340344480602394">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.ts:33</note>
+      </notes>
+      <segment>
+        <source>Real-time Processing</source>
+      </segment>
+    </unit>
+    <unit id="1993474115577442334">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.ts:34</note>
+      </notes>
+      <segment>
+        <source>Get instant transcriptions as you speak with minimal latency.</source>
+      </segment>
+    </unit>
+    <unit id="483349158516178363">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.ts:38</note>
+      </notes>
+      <segment>
+        <source>Cross-Platform Sync</source>
+      </segment>
+    </unit>
+    <unit id="2394936619807149324">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.ts:39</note>
+      </notes>
+      <segment>
+        <source>Seamlessly sync your transcriptions across Mac, iPad, and iPhone.</source>
+      </segment>
+    </unit>
+    <unit id="5621615583972660300">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.ts:44</note>
+      </notes>
+      <segment>
+        <source>Your audio never leaves your device. All processing happens locally.</source>
+      </segment>
+    </unit>
+    <unit id="6540754355568041726">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.ts:49</note>
+      </notes>
+      <segment>
+        <source>Export to multiple formats including TXT, PDF, and DOCX.</source>
+      </segment>
+    </unit>
+    <unit id="5627293176306803240">
+      <notes>
+        <note category="location">src/app/pages/home/home.component.ts:54</note>
+      </notes>
+      <segment>
+        <source>Support for over 50 languages and dialects.</source>
+      </segment>
+    </unit>
+    <unit id="8223369621823893326">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:12,14</note>
+      </notes>
+      <segment>
+        <source>Last updated: January 2026</source>
+      </segment>
+    </unit>
+    <unit id="2171894153326157864">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:15,16</note>
+      </notes>
+      <segment>
+        <source>Introduction</source>
+      </segment>
+    </unit>
+    <unit id="7938808885348233546">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:17,19</note>
+      </notes>
+      <segment>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/> (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use our voice transcription application. </source>
+      </segment>
+    </unit>
+    <unit id="907712207198502590">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:24,25</note>
+      </notes>
+      <segment>
+        <source>Data Processing</source>
+      </segment>
+    </unit>
+    <unit id="6205981270697109640">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:26,28</note>
+      </notes>
+      <segment>
+        <source> All voice transcription processing occurs entirely on your device. Your audio recordings and transcriptions are never transmitted to our servers or any third-party services. </source>
+      </segment>
+    </unit>
+    <unit id="8398106310102423139">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:33,34</note>
+      </notes>
+      <segment>
+        <source>Information We Collect</source>
+      </segment>
+    </unit>
+    <unit id="5775250530050660232">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:34,35</note>
+      </notes>
+      <segment>
+        <source>We do not collect personal information. Specifically:</source>
+      </segment>
+    </unit>
+    <unit id="3260893713245470981">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:36,37</note>
+      </notes>
+      <segment>
+        <source>Voice recordings stay on your device</source>
+      </segment>
+    </unit>
+    <unit id="990324526614083158">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:37,38</note>
+      </notes>
+      <segment>
+        <source>Transcriptions are stored locally and optionally in your iCloud</source>
+      </segment>
+    </unit>
+    <unit id="4406520415195711349">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:38,39</note>
+      </notes>
+      <segment>
+        <source>We do not collect usage analytics</source>
+      </segment>
+    </unit>
+    <unit id="4522901874475598024">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:39,40</note>
+      </notes>
+      <segment>
+        <source>We do not use cookies or tracking technologies</source>
+      </segment>
+    </unit>
+    <unit id="1071416720058708932">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:44,45</note>
+      </notes>
+      <segment>
+        <source>iCloud Data</source>
+      </segment>
+    </unit>
+    <unit id="2089845093455542032">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:46,48</note>
+      </notes>
+      <segment>
+        <source> If you enable iCloud sync, your transcriptions are stored in your personal iCloud account. This data is encrypted and managed by Apple according to their privacy policies. We do not have access to your iCloud data. </source>
+      </segment>
+    </unit>
+    <unit id="3345334251967998066">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:53,54</note>
+      </notes>
+      <segment>
+        <source>Third-Party Services</source>
+      </segment>
+    </unit>
+    <unit id="449369326904574085">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:55,57</note>
+      </notes>
+      <segment>
+        <source> <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/> does not integrate with any third-party analytics, advertising, or data collection services. The app functions entirely offline. </source>
+      </segment>
+    </unit>
+    <unit id="585119335172214083">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:61,62</note>
+      </notes>
+      <segment>
+        <source>Children&apos;s Privacy</source>
+      </segment>
+    </unit>
+    <unit id="7345652749886508266">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:63,64</note>
+      </notes>
+      <segment>
+        <source> Our app is suitable for all ages. Since we do not collect any personal information, our services are safe for children to use. </source>
+      </segment>
+    </unit>
+    <unit id="7698518703980689677">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:69,70</note>
+      </notes>
+      <segment>
+        <source>Changes to This Policy</source>
+      </segment>
+    </unit>
+    <unit id="3957912023737657805">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:71,73</note>
+      </notes>
+      <segment>
+        <source> We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date. </source>
+      </segment>
+    </unit>
+    <unit id="759687838251957893">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:78,79</note>
+      </notes>
+      <segment>
+        <source>Contact Us</source>
+      </segment>
+    </unit>
+    <unit id="1502851535751385670">
+      <notes>
+        <note category="location">src/app/pages/privacy/privacy.component.ts:80,81</note>
+      </notes>
+      <segment>
+        <source> If you have questions about this Privacy Policy, please contact us at: </source>
+      </segment>
+    </unit>
+    <unit id="7096216104365743214">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.html:3,5</note>
+      </notes>
+      <segment>
+        <source>We&apos;re here to help you get the most out of <ph id="0" equiv="INTERPOLATION" disp="{{ config.name }}"/>.</source>
+      </segment>
+    </unit>
+    <unit id="5700665838587556814">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.html:26,27</note>
+      </notes>
+      <segment>
+        <source>Quick Help</source>
+      </segment>
+    </unit>
+    <unit id="4725733560343094256">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.html:38,39</note>
+      </notes>
+      <segment>
+        <source>Need More Help?</source>
+      </segment>
+    </unit>
+    <unit id="2002477423842095084">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.html:40,41</note>
+      </notes>
+      <segment>
+        <source> Check our comprehensive documentation or reach out to our support team directly. </source>
+      </segment>
+    </unit>
+    <unit id="1510765948697142928">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.html:45,46</note>
+      </notes>
+      <segment>
+        <source>View Documentation</source>
+      </segment>
+    </unit>
+    <unit id="579912113060173772">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.html:49,50</note>
+      </notes>
+      <segment>
+        <source>Contact Support</source>
+      </segment>
+    </unit>
+    <unit id="1336542143746897548">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:27</note>
+      </notes>
+      <segment>
+        <source>Email Support</source>
+      </segment>
+    </unit>
+    <unit id="464599822967427477">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:28</note>
+      </notes>
+      <segment>
+        <source>Send us an email and we&apos;ll respond within 24 hours.</source>
+      </segment>
+    </unit>
+    <unit id="7681084894365071533">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:33</note>
+      </notes>
+      <segment>
+        <source>Report a Bug</source>
+      </segment>
+    </unit>
+    <unit id="6665670308289814053">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:34</note>
+      </notes>
+      <segment>
+        <source>Found an issue? Let us know so we can fix it.</source>
+      </segment>
+    </unit>
+    <unit id="1419992270091132182">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:39</note>
+      </notes>
+      <segment>
+        <source>Feature Request</source>
+      </segment>
+    </unit>
+    <unit id="3291900729218965685">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:40</note>
+      </notes>
+      <segment>
+        <source>Have an idea to improve <ph id="0" equiv="PH" disp="this.config.name"/>? We&apos;d love to hear it.</source>
+      </segment>
+    </unit>
+    <unit id="4742515546052512862">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:47</note>
+      </notes>
+      <segment>
+        <source>How do I grant microphone permissions?</source>
+      </segment>
+    </unit>
+    <unit id="4172047604609533153">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:48</note>
+      </notes>
+      <segment>
+        <source>Go to Settings &gt; Privacy &amp; Security &gt; Microphone on your device and ensure <ph id="0" equiv="PH" disp="this.config.name"/> is enabled.</source>
+      </segment>
+    </unit>
+    <unit id="1865453344085705967">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:51</note>
+      </notes>
+      <segment>
+        <source>Why isn&apos;t my transcription syncing?</source>
+      </segment>
+    </unit>
+    <unit id="2936533647878550665">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:52</note>
+      </notes>
+      <segment>
+        <source>Make sure you&apos;re signed into iCloud and have a stable internet connection. Check that iCloud Drive is enabled for <ph id="0" equiv="PH" disp="this.config.name"/>.</source>
+      </segment>
+    </unit>
+    <unit id="6476699031940717214">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:55</note>
+      </notes>
+      <segment>
+        <source>How do I delete a transcription?</source>
+      </segment>
+    </unit>
+    <unit id="8914100975812979836">
+      <notes>
+        <note category="location">src/app/pages/support/support.component.ts:56</note>
+      </notes>
+      <segment>
+        <source>Swipe left on the transcription in the list view and tap Delete, or open the transcription and tap the trash icon.</source>
+      </segment>
+    </unit>
   </file>
 </xliff>

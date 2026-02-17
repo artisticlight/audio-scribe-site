@@ -58,16 +58,24 @@ import { APP_CONFIG } from '../../app.config.constants';
 
       <section class="cta">
         <h2 i18n>Ready to Try {{ config.name }}?</h2>
-        <p i18n>Download now from the App Store.</p>
-        <a
-          mat-raised-button
-          color="primary"
-          [href]="config.appStoreUrl"
-          target="_blank"
-          rel="noopener noreferrer">
-          <mat-icon>download</mat-icon>
-          <span i18n>Download on App Store</span>
-        </a>
+        @if (hasAppStoreUrl) {
+          <p i18n>Download now from the App Store.</p>
+          <a
+            mat-raised-button
+            color="primary"
+            [href]="config.appStoreUrl"
+            target="_blank"
+            rel="noopener noreferrer">
+            <mat-icon>download</mat-icon>
+            <span i18n>Download on App Store</span>
+          </a>
+        } @else {
+          <p i18n>The App Store listing is coming soon. Join the launch list for updates.</p>
+          <a mat-raised-button color="primary" [href]="config.launchUpdatesUrl">
+            <mat-icon>email</mat-icon>
+            <span i18n>Notify Me</span>
+          </a>
+        }
       </section>
     </article>
   `,
@@ -153,4 +161,5 @@ import { APP_CONFIG } from '../../app.config.constants';
 })
 export class AboutComponent {
   protected readonly config = APP_CONFIG;
+  protected readonly hasAppStoreUrl = this.config.appStoreUrl.trim().length > 0;
 }

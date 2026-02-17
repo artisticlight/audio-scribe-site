@@ -20,6 +20,7 @@ import { APP_CONFIG } from '../../app.config.constants';
 })
 export class HomeComponent {
   protected readonly config = APP_CONFIG;
+  protected readonly hasAppStoreUrl = this.config.appStoreUrl.trim().length > 0;
 
   features = [
     {

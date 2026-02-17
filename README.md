@@ -38,10 +38,40 @@ This will compile your project and store the build artifacts in the `dist/` dire
 
 ## Running unit tests
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use:
 
 ```bash
-ng test
+npm test
+```
+
+Tests are configured to run once by default. To run in watch mode:
+
+```bash
+ng test --watch
+```
+
+## Linting
+
+Run ESLint checks for TypeScript and Angular templates:
+
+```bash
+npm run lint
+```
+
+## Localization
+
+The site is configured for English, Spanish, and French.
+
+Extract source messages:
+
+```bash
+ng extract-i18n --format=xlf2 --output-path=src/locale
+```
+
+Build all locales for production:
+
+```bash
+ng build --configuration production --localize
 ```
 
 ## Running end-to-end tests
