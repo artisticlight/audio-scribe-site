@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -28,6 +28,7 @@ const SUPPORTED_LOCALES = ['en', 'es', 'fr'] as const;
   styleUrl: './app.scss'
 })
 export class App implements OnDestroy {
+  private readonly iconRegistry = inject(MatIconRegistry);
   protected readonly config = APP_CONFIG;
   protected readonly currentYear = new Date().getFullYear();
   protected readonly tooltipLightMode = $localize`Switch to light mode`;
@@ -54,6 +55,8 @@ export class App implements OnDestroy {
   };
 
   constructor() {
+    this.iconRegistry.setDefaultFontSetClass('material-symbols-outlined', 'mat-ligature-font');
+
     if (typeof document !== 'undefined') {
       this.applyDarkMode(this.isDarkMode());
     }
