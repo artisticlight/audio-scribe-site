@@ -1,0 +1,105 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 i18n>Transform Your Voice into Text</h1>
+      <p class="hero-subtitle" i18n>
+        Professional-grade voice transcription for Mac, iPad, and iPhone.
+        Powered by AI, designed for privacy.
+      </p>
+      <div class="hero-actions">
+        <a
+          mat-raised-button
+          color="primary"
+          [href]="config.appStoreUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="download-btn">
+          <mat-icon>download</mat-icon>
+          Download on the App Store
+        </a>
+        <a
+          mat-stroked-button
+          routerLink="/documentation"
+          class="learn-more-btn">
+          Learn More
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="app-preview">
+        <img [src]="config.logoPath" [alt]="config.name" class="hero-logo" width="120" height="120" loading="eager" fetchpriority="high" />
+        <div class="waveform">
+          @for (i of [1,2,3,4,5,6,7,8,9,10]; track i) {
+            <div class="wave-bar"></div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features section">
+  <div class="container">
+    <h2 class="section-title" i18n>Features</h2>
+    <p class="section-subtitle" i18n>Everything you need for professional voice transcription</p>
+
+    <div class="features-grid">
+      @for (feature of features; track feature.title) {
+        <mat-card class="feature-card">
+          <mat-card-content>
+            <div class="feature-icon">
+              <mat-icon>{{ feature.icon }}</mat-icon>
+            </div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Platforms Section -->
+<section class="platforms section">
+  <div class="container">
+    <h2 class="section-title" i18n>Available on All Your Devices</h2>
+    <p class="section-subtitle" i18n>Seamless experience across Apple ecosystem</p>
+
+    <div class="platforms-grid">
+      <div class="platform">
+        <mat-icon>laptop_mac</mat-icon>
+        <h3 i18n>Mac</h3>
+        <p i18n>Full-featured desktop experience</p>
+      </div>
+      <div class="platform">
+        <mat-icon>tablet_mac</mat-icon>
+        <h3 i18n>iPad</h3>
+        <p i18n>Optimized for iPad and iPad Pro</p>
+      </div>
+      <div class="platform">
+        <mat-icon>phone_iphone</mat-icon>
+        <h3 i18n>iPhone</h3>
+        <p i18n>Record and transcribe on the go</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta section">
+  <div class="container">
+    <h2 i18n>Ready to Get Started?</h2>
+    <p i18n>Download {{ config.name }} from the App Store today.</p>
+    <a
+      mat-raised-button
+      color="accent"
+      [href]="config.appStoreUrl"
+      target="_blank"
+      rel="noopener noreferrer">
+      <mat-icon>download</mat-icon>
+      Download Now
+    </a>
+  </div>
+</section>

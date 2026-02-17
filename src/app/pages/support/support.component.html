@@ -1,0 +1,53 @@
+<div class="support-container container section">
+  <h1 i18n>Support</h1>
+  <p class="subtitle" i18n>We're here to help you get the most out of {{ config.name }}.</p>
+
+  <div class="support-options">
+    @for (option of supportOptions; track option.title) {
+      <mat-card class="support-card">
+        <mat-card-content>
+          <div class="support-icon">
+            <mat-icon>{{ option.icon }}</mat-icon>
+          </div>
+          <h3>{{ option.title }}</h3>
+          <p>{{ option.description }}</p>
+          <a
+            mat-button
+            color="primary"
+            [href]="'mailto:' + option.action">
+            {{ option.action }}
+          </a>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+
+  <section class="quick-help">
+    <h2 i18n>Quick Help</h2>
+    <div class="faq-list">
+      @for (faq of faqs; track faq.question) {
+        <div class="faq-item">
+          <h4>{{ faq.question }}</h4>
+          <p>{{ faq.answer }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="additional-help">
+    <h2 i18n>Need More Help?</h2>
+    <p i18n>
+      Check our comprehensive documentation or reach out to our support team directly.
+    </p>
+    <div class="help-actions">
+      <a mat-raised-button color="primary" routerLink="/documentation">
+        <mat-icon>description</mat-icon>
+        View Documentation
+      </a>
+      <a mat-stroked-button [href]="'mailto:' + config.supportEmail">
+        <mat-icon>email</mat-icon>
+        Contact Support
+      </a>
+    </div>
+  </section>
+</div>
