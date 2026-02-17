@@ -25,6 +25,7 @@ html {
   --sys-secondary-container: #d1e4ff;
   --sys-outline: #70787e;
   --sys-background: #fafdff;
+  --toolbar-height: 56px;
 }
 
 // Dark theme when toggled
@@ -69,6 +70,17 @@ body {
   }
 }
 
+.section-title {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--sys-on-surface-variant);
+  margin-bottom: 48px;
+}
+
 // Typography styles
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 16px;
@@ -91,25 +103,19 @@ a {
   }
 }
 
-// Material component overrides
-mat-toolbar {
-  &.mat-toolbar {
-    background-color: var(--sys-surface);
-    color: var(--sys-on-surface);
-  }
+// Material component overrides (MDC selectors)
+.mat-mdc-toolbar {
+  background-color: var(--sys-surface) !important;
+  color: var(--sys-on-surface);
 }
 
-mat-sidenav {
-  &.mat-drawer {
-    background-color: var(--sys-surface);
-  }
+.mat-drawer {
+  background-color: var(--sys-surface);
 }
 
-mat-card {
-  &.mat-card {
-    background-color: var(--sys-surface);
-    border-radius: 12px;
-  }
+.mat-mdc-card {
+  background-color: var(--sys-surface);
+  border-radius: 12px;
 }
 
 // Responsive utilities

@@ -59,7 +59,7 @@
       <button
         mat-icon-button
         (click)="toggleDarkMode()"
-        [matTooltip]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
+        [matTooltip]="isDarkMode() ? tooltipLightMode : tooltipDarkMode"
         aria-label="Toggle dark mode">
         <mat-icon>{{ isDarkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
       </button>
@@ -71,7 +71,8 @@
         target="_blank"
         rel="noopener noreferrer"
         class="download-button hide-mobile"
-        title="Download Audio Scribe on the App Store (opens in new tab)">
+        title="Download Audio Scribe on the App Store (opens in new tab)"
+        aria-label="Download Audio Scribe on the App Store (opens in new tab)">
         <mat-icon>download</mat-icon>
         <span i18n>Download</span>
       </a>
@@ -108,6 +109,8 @@
                 [src]="config.appStoreBadgePath"
                 alt="Download on the App Store"
                 class="app-store-badge"
+                width="120"
+                height="40"
                 loading="lazy" />
             </a>
           </div>

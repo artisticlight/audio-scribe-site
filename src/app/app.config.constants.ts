@@ -4,7 +4,7 @@
  * Centralized configuration for easy customization.
  * Change these values to update the app branding.
  */
-export const APP_CONFIG = {
+const _APP_CONFIG = {
   // Application name - change this when the official name is decided
   name: 'Audio Scribe',
 
@@ -37,3 +37,5 @@ export const APP_CONFIG = {
     instagram: ''
   }
 } as const;
+
+export const APP_CONFIG = Object.freeze(_APP_CONFIG);

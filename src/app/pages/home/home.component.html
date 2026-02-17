@@ -14,22 +14,23 @@
           [href]="config.appStoreUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="download-btn">
+          class="download-btn"
+          title="Download Audio Scribe on the App Store (opens in new tab)">
           <mat-icon>download</mat-icon>
-          Download on the App Store
+          <span i18n>Download on the App Store</span>
         </a>
         <a
           mat-stroked-button
           routerLink="/documentation"
           class="learn-more-btn">
-          Learn More
+          <span i18n>Learn More</span>
         </a>
       </div>
     </div>
     <div class="hero-image">
       <div class="app-preview">
         <img [src]="config.logoPath" [alt]="config.name" class="hero-logo" width="120" height="120" loading="eager" fetchpriority="high" />
-        <div class="waveform">
+        <div class="waveform" aria-hidden="true">
           @for (i of [1,2,3,4,5,6,7,8,9,10]; track i) {
             <div class="wave-bar"></div>
           }
@@ -99,7 +100,7 @@
       target="_blank"
       rel="noopener noreferrer">
       <mat-icon>download</mat-icon>
-      Download Now
+      <span i18n>Download Now</span>
     </a>
   </div>
 </section>

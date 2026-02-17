@@ -7,13 +7,13 @@ export const routes: Routes = [
   },
   {
     path: 'documentation',
-    redirectTo: 'documentation/getting-started',
-    pathMatch: 'full'
-  },
-  {
-    path: 'documentation',
     loadComponent: () => import('./pages/documentation/documentation.component').then(m => m.DocumentationComponent),
     children: [
+      {
+        path: '',
+        redirectTo: 'getting-started',
+        pathMatch: 'full'
+      },
       {
         path: 'getting-started',
         loadComponent: () => import('./pages/documentation/getting-started/getting-started.component').then(m => m.GettingStartedComponent)

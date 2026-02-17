@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { APP_CONFIG } from '../../../app.config.constants';
 
 @Component({
   selector: 'app-faq',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatExpansionModule],
   template: `
     <article>
@@ -25,7 +27,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
             <mat-panel-title i18n>Which languages are supported?</mat-panel-title>
           </mat-expansion-panel-header>
           <p i18n>
-            Audio Scribe supports over 50 languages including English, Spanish, French,
+            {{ config.name }} supports over 50 languages including English, Spanish, French,
             German, Italian, Portuguese, Japanese, Korean, and Chinese. Check the Features
             section for the complete list.
           </p>
@@ -56,7 +58,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
             <mat-panel-title i18n>Is there a subscription fee?</mat-panel-title>
           </mat-expansion-panel-header>
           <p i18n>
-            Audio Scribe is a one-time purchase with no subscription required. All future
+            {{ config.name }} is a one-time purchase with no subscription required. All future
             updates are included with your purchase.
           </p>
         </mat-expansion-panel>
@@ -72,4 +74,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
     }
   `]
 })
-export class FaqComponent {}
+export class FaqComponent {
+  protected readonly config = APP_CONFIG;
+}

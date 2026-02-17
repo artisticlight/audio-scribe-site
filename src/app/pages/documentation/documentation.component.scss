@@ -1,7 +1,7 @@
 .docs-container {
   display: grid;
   grid-template-columns: 1fr;
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - var(--toolbar-height));
 
   @media (min-width: 768px) {
     grid-template-columns: 240px 1fr;
@@ -13,8 +13,8 @@
   border-right: 1px solid var(--sys-outline);
   padding: 24px 16px;
   position: sticky;
-  top: 56px;
-  height: calc(100vh - 56px);
+  top: var(--toolbar-height);
+  height: calc(100vh - var(--toolbar-height));
   overflow-y: auto;
 
   h3 {

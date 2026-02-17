@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   <title>Audio Scribe - Voice Transcription for Mac, iPad & iPhone</title>
-  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Professional voice transcription app for Mac, iPad, and iPhone. AI-powered, privacy-focused, offline-capable.">
   <meta name="keywords" content="voice transcription, speech to text, dictation, Mac app, iPhone app, iPad app">
   <meta name="author" content="Audio Scribe">
   <meta name="theme-color" content="#0063aa">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap&subset=latin" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap&subset=latin" rel="stylesheet"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined&icon_names=home,description,support_agent,info,privacy_tip,menu,light_mode,dark_mode,download,mic,speed,devices,security,folder,translate,laptop_mac,tablet_mac,phone_iphone,rocket_launch,stars,help,email,bug_report,feedback,lock,favorite,star&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined&icon_names=home,description,support_agent,info,privacy_tip,menu,light_mode,dark_mode,download,mic,speed,devices,security,folder,translate,laptop_mac,tablet_mac,phone_iphone,rocket_launch,stars,help,email,bug_report,feedback,lock,favorite,star&display=swap" rel="stylesheet"></noscript>
 </head>
 <body>
   <script>
@@ -26,7 +27,11 @@
         var decoded = l.search.slice(1).split('&').map(function(s) {
           return s.replace(/~and~/g, '&')
         }).join('?');
-        window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        var candidate = l.pathname.replace(/\/$/, '') + decoded + l.hash;
+        // Guard against open redirects: only allow paths starting with the base href
+        if (candidate.indexOf('/audio-scribe-site') === 0 && candidate.indexOf('//') !== 0) {
+          window.history.replaceState(null, null, candidate);
+        }
       }
     }(window.location))
   </script>

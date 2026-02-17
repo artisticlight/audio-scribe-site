@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { APP_CONFIG } from '../../app.config.constants';
@@ -6,6 +6,7 @@ import { APP_CONFIG } from '../../app.config.constants';
 @Component({
   selector: 'app-about',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatButtonModule, MatIconModule],
   template: `
     <article class="container section">
@@ -65,7 +66,7 @@ import { APP_CONFIG } from '../../app.config.constants';
           target="_blank"
           rel="noopener noreferrer">
           <mat-icon>download</mat-icon>
-          Download on App Store
+          <span i18n>Download on App Store</span>
         </a>
       </section>
     </article>

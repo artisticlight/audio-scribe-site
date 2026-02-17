@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { APP_CONFIG } from '../../../app.config.constants';
 
 @Component({
   selector: 'app-features',
   standalone: true,
-  imports: [MatCardModule, MatIconModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <article>
       <h1 i18n>Features</h1>
