@@ -1,0 +1,126 @@
+// Custom theme for Audio Scribe Site
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  // Include theming for Angular Material with mat.theme()
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+// Light theme (default)
+:root {
+  --sys-surface: #fafdff;
+  --sys-on-surface: #001d35;
+  --sys-surface-variant: #dce3ed;
+  --sys-on-surface-variant: #40484e;
+  --sys-primary: #0063aa;
+  --sys-on-primary: #ffffff;
+  --sys-secondary-container: #d1e4ff;
+  --sys-outline: #70787e;
+  --sys-background: #fafdff;
+}
+
+// Dark theme when toggled
+html.dark {
+  color-scheme: dark;
+
+  --sys-surface: #001d35;
+  --sys-on-surface: #e1f1fd;
+  --sys-surface-variant: #40484e;
+  --sys-on-surface-variant: #dce3ed;
+  --sys-primary: #99cdf6;
+  --sys-on-primary: #003257;
+  --sys-secondary-container: #004a80;
+  --sys-outline: #8a9298;
+  --sys-background: #001d35;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background-color: var(--sys-background);
+  color: var(--sys-on-surface);
+  font-family: 'Inter', Roboto, system-ui, sans-serif;
+}
+
+// Global utility classes
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @media (min-width: 768px) {
+    padding: 0 32px;
+  }
+}
+
+.section {
+  padding: 48px 0;
+
+  @media (min-width: 768px) {
+    padding: 80px 0;
+  }
+}
+
+// Typography styles
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+
+h1 { font-size: 2.5rem; line-height: 1.2; }
+h2 { font-size: 2rem; line-height: 1.3; }
+h3 { font-size: 1.5rem; line-height: 1.4; }
+h4 { font-size: 1.25rem; line-height: 1.4; }
+
+p { margin: 0 0 16px; }
+
+a {
+  color: var(--sys-primary);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Material component overrides
+mat-toolbar {
+  &.mat-toolbar {
+    background-color: var(--sys-surface);
+    color: var(--sys-on-surface);
+  }
+}
+
+mat-sidenav {
+  &.mat-drawer {
+    background-color: var(--sys-surface);
+  }
+}
+
+mat-card {
+  &.mat-card {
+    background-color: var(--sys-surface);
+    border-radius: 12px;
+  }
+}
+
+// Responsive utilities
+@media (max-width: 599px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 600px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}

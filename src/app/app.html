@@ -1,0 +1,121 @@
+<mat-sidenav-container class="app-container">
+  <mat-sidenav
+    #sidenav
+    [opened]="isSidenavOpen()"
+    (openedChange)="isSidenavOpen.set($event)"
+    mode="over"
+    class="app-sidenav"
+    [fixedInViewport]="true"
+    fixedTopGap="56"
+    aria-label="Mobile navigation">
+    <mat-nav-list>
+      @for (item of navigationItems; track item.path) {
+        <a
+          mat-list-item
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          (click)="closeSidenav()">
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+          <span matListItemTitle>{{ item.label }}</span>
+        </a>
+      }
+      <a mat-list-item routerLink="/privacy" (click)="closeSidenav()">
+        <mat-icon matListItemIcon>privacy_tip</mat-icon>
+        <span matListItemTitle i18n>Privacy Policy</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="app-toolbar">
+      <button
+        mat-icon-button
+        (click)="toggleSidenav()"
+        class="menu-button hide-desktop"
+        aria-label="Toggle menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <a routerLink="/" class="brand-link">
+        <img [src]="config.logoPath" [alt]="config.name" class="brand-logo" width="32" height="32" />
+        <span class="brand-name">{{ config.name }}</span>
+      </a>
+
+      <span class="spacer"></span>
+
+      <nav class="nav-links hide-mobile" aria-label="Main navigation">
+        @for (item of navigationItems; track item.path) {
+          <a
+            mat-button
+            [routerLink]="item.path"
+            routerLinkActive="active-nav-link"
+            [routerLinkActiveOptions]="{exact: item.path === '/'}">
+            {{ item.label }}
+          </a>
+        }
+        <a mat-button routerLink="/privacy" i18n>Privacy</a>
+      </nav>
+
+      <button
+        mat-icon-button
+        (click)="toggleDarkMode()"
+        [matTooltip]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
+        aria-label="Toggle dark mode">
+        <mat-icon>{{ isDarkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      </button>
+
+      <a
+        mat-raised-button
+        color="accent"
+        [href]="config.appStoreUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="download-button hide-mobile"
+        title="Download Audio Scribe on the App Store (opens in new tab)">
+        <mat-icon>download</mat-icon>
+        <span i18n>Download</span>
+      </a>
+    </mat-toolbar>
+
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+
+    <footer class="app-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>{{ config.name }}</h4>
+            <p i18n>Professional voice transcription for Mac, iPad, and iPhone.</p>
+          </div>
+          <div class="footer-section">
+            <h4 i18n>Quick Links</h4>
+            <nav aria-label="Footer navigation">
+              <a routerLink="/documentation" i18n>Documentation</a>
+              <a routerLink="/support" i18n>Support</a>
+              <a routerLink="/privacy" i18n>Privacy Policy</a>
+            </nav>
+          </div>
+          <div class="footer-section">
+            <h4 i18n>Download</h4>
+            <a
+              [href]="config.appStoreUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="app-store-link"
+              title="Download on the App Store (opens in new tab)">
+              <img
+                [src]="config.appStoreBadgePath"
+                alt="Download on the App Store"
+                class="app-store-badge"
+                loading="lazy" />
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; {{ currentYear }} {{ config.name }}. <span i18n>All rights reserved.</span></p>
+        </div>
+      </div>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
