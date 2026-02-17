@@ -50,6 +50,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "baseHref": "/audio-scribe-site/",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
