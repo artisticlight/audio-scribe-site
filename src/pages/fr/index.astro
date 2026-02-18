@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import VoiceWaveform from '../../components/VoiceWaveform.astro';
+import { hasAppStoreUrl, ctaUrl } from '../../config';
+import { getTranslations, localePath } from '../../i18n/utils';
+
+const t = getTranslations('fr');
+const lp = (path = '') => localePath('fr', path);
+const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <section class="relative isolate overflow-hidden bg-hero">
+    <video
+      class="absolute inset-0 -z-20 h-full w-full object-cover object-center md:scale-[1.02] xl:scale-[1.08]"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source src={`${import.meta.env.BASE_URL}video/big-circle.mp4`} type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(191,171,154,0.42)_0%,rgba(191,171,154,0.28)_52%,rgba(191,171,154,0.08)_100%)]"></div>
+    <div class="container-main relative z-10 flex min-h-[740px] flex-col items-center justify-center px-0 pt-[8.5rem] pb-24 sm:min-h-[790px] sm:pt-[9.5rem] lg:min-h-[860px] lg:pt-[10.5rem] lg:pb-28">
+      <div class="mx-auto space-y-10 text-center lg:space-y-14">
+        <div class="space-y-5 text-center">
+          <span class="inline-block rounded-full border border-accent/30 px-5 py-2 text-tagline-2 text-accent/80 backdrop-blur-sm">
+            {hasAppStoreUrl ? t.hero.badge : t.hero.badgeFallback}
+          </span>
+          <h1 class="!mx-auto !max-w-[350px] !text-heading-3 !leading-[110%] !text-accent lg:!max-w-[500px] lg:!text-heading-1">{t.hero.headline}</h1>
+          <p class="!mx-auto !max-w-[465px] !text-accent/80 font-normal">{t.hero.subtitle}</p>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-y-4 sm:flex-row sm:gap-x-4 sm:gap-y-0">
+          <a href={ctaUrl} class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-tagline-1 font-normal text-secondary shadow-1 transition-all duration-300 hover:scale-[1.02]" {...(!hasAppStoreUrl ? {} : { target: '_blank', rel: 'noopener noreferrer' })}>
+            {ctaText}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+          </a>
+          <a href={lp('docs/')} class="inline-flex items-center justify-center gap-2 rounded-full border border-accent/30 px-8 py-3.5 text-tagline-1 font-normal text-accent backdrop-blur-sm transition-all duration-300 hover:bg-accent/10">
+            {t.hero.learnMore}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+          </a>
+        </div>
+      </div>
+      <div class="pointer-events-none absolute inset-x-0 bottom-4 z-10 flex justify-center sm:bottom-6 lg:bottom-8"><VoiceWaveform /></div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <section class="py-16 bg-surface">
+    <div class="container-main">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-ns-linen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+          <span class="text-tagline-1 text-secondary/60 font-normal">{t.trust.onDevice}</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-ns-linen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
+          <span class="text-tagline-1 text-secondary/60 font-normal">{t.trust.encrypted}</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-ns-linen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10" /><path d="M18 6L6 18M6 6l12 12" /></svg>
+          <span class="text-tagline-1 text-secondary/60 font-normal">{t.trust.noCollection}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 md:py-32 bg-surface">
+    <div class="container-main">
+      <div class="text-center mb-16">
+        <h2 class="font-medium mb-4">{t.features.title}</h2>
+        <p class="max-w-xl mx-auto">{t.features.subtitle}</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="relative rounded-3xl bg-background-1 border border-stroke-2 p-8 overflow-hidden group hover:shadow-2 transition-all duration-500">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-ns-linen/20 to-transparent rounded-bl-full"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-2xl bg-ns-ivory flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" /><path d="M12 18h.01" /></svg>
+            </div>
+            <h3 class="text-heading-6 font-medium mb-3">{t.features.onDevice}</h3>
+            <p class="leading-relaxed">{t.features.onDeviceDesc}</p>
+          </div>
+        </div>
+        <div class="relative rounded-3xl bg-background-1 border border-stroke-2 p-8 overflow-hidden group hover:shadow-2 transition-all duration-500">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-ns-linen/20 to-transparent rounded-bl-full"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-2xl bg-ns-ivory flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" /></svg>
+            </div>
+            <h3 class="text-heading-6 font-medium mb-3">{t.features.icloud}</h3>
+            <p class="leading-relaxed">{t.features.icloudDesc}</p>
+          </div>
+        </div>
+        <div class="relative rounded-3xl bg-background-1 border border-stroke-2 p-8 overflow-hidden group hover:shadow-2 transition-all duration-500">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-ns-linen/20 to-transparent rounded-bl-full"></div>
+          <div class="relative">
+            <div class="w-14 h-14 rounded-2xl bg-ns-ivory flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+            </div>
+            <h3 class="text-heading-6 font-medium mb-3">{t.features.cloudModels}</h3>
+            <p class="leading-relaxed">{t.features.cloudModelsDesc}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platforms -->
+  <section class="py-20 md:py-32 bg-background-3">
+    <div class="container-main">
+      <div class="text-center mb-16">
+        <h2 class="font-medium mb-4">{t.platforms.title}</h2>
+        <p>{t.platforms.subtitle}</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="text-center p-8">
+          <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6 shadow-1">
+            <svg class="w-10 h-10 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
+          </div>
+          <h3 class="text-heading-6 font-medium mb-2">{t.platforms.mac}</h3>
+          <p>{t.platforms.macDesc}</p>
+        </div>
+        <div class="text-center p-8">
+          <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6 shadow-1">
+            <svg class="w-10 h-10 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2" /><path d="M10 18h4" /></svg>
+          </div>
+          <h3 class="text-heading-6 font-medium mb-2">{t.platforms.ipad}</h3>
+          <p>{t.platforms.ipadDesc}</p>
+        </div>
+        <div class="text-center p-8">
+          <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6 shadow-1">
+            <svg class="w-10 h-10 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" /><path d="M12 18h.01" /></svg>
+          </div>
+          <h3 class="text-heading-6 font-medium mb-2">{t.platforms.iphone}</h3>
+          <p>{t.platforms.iphoneDesc}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-32 bg-ns-ivory">
+    <div class="container-main text-center">
+      <h2 class="font-medium mb-4">{t.cta.title}</h2>
+      <p class="mb-10 text-tagline-1">{t.cta.subtitle}</p>
+      <a href={ctaUrl} class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-secondary text-white font-normal text-tagline-1 hover:scale-[1.02] transition-all duration-300 shadow-1" {...(!hasAppStoreUrl ? {} : { target: '_blank', rel: 'noopener noreferrer' })}>
+        {ctaText}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
