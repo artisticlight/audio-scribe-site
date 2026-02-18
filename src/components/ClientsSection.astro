@@ -1,0 +1,74 @@
+---
+interface ClientsCopy {
+  titleStart: string;
+  count: string;
+  titleEnd: string;
+  marqueeAria: string;
+}
+
+interface Props {
+  copy: ClientsCopy;
+}
+
+const { copy } = Astro.props as Props;
+const assetBase = `${import.meta.env.BASE_URL}assets/clients/`;
+
+const logos = [
+  { name: 'Scapic', file: 'scapic-metal.svg', width: 135, widthClass: 'w-[135px]' },
+  { name: 'Asana', file: 'asana-metal.svg', width: 128, widthClass: 'w-[128px]' },
+  { name: 'Discord', file: 'discord-metal.svg', width: 160, widthClass: 'w-[160px]' },
+  { name: 'Dropbox', file: 'dropbox-metal.svg', width: 164, widthClass: 'w-[164px]' },
+  { name: 'Hotjar', file: 'hotjar-metal.svg', width: 124, widthClass: 'w-[124px]' },
+  { name: 'Lattice', file: 'lattice-metal.svg', width: 148, widthClass: 'w-[148px]' },
+  { name: 'Notion', file: 'notion-metal.svg', width: 128, widthClass: 'w-[128px]' },
+  { name: 'Outreach', file: 'outreach-metal.svg', width: 168, widthClass: 'w-[168px]' },
+  { name: 'Spotify', file: 'spotify-metal.svg', width: 136, widthClass: 'w-[136px]' },
+  { name: 'Squarespace', file: 'squarespace-metal.svg', width: 250, widthClass: 'w-[250px]' },
+  { name: 'Stripe', file: 'stripe-metal.svg', width: 123, widthClass: 'w-[123px]' },
+];
+---
+
+<section class="py-16 lg:py-28 xl:py-39" aria-label={copy.marqueeAria}>
+  <div class="container-main">
+    <div class="relative overflow-hidden text-center">
+      <h2 class="mx-auto mb-14 max-w-[800px] text-center font-normal">
+        {copy.titleStart}
+        <span class="text-ns-linen"> {copy.count}</span>
+        {' '}
+        {copy.titleEnd}
+      </h2>
+
+      <div class="clients-marquee mt-14" role="img" aria-label={copy.marqueeAria}>
+        <div class="clients-track">
+          {logos.map((logo) => (
+            <figure class:list={['clients-logo-figure', logo.widthClass]}>
+              <img
+                src={`${assetBase}${logo.file}`}
+                alt={`${logo.name} logo`}
+                width={logo.width}
+                height="45"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          ))}
+          {logos.map((logo) => (
+            <figure class:list={['clients-logo-figure', 'clients-logo-duplicate', logo.widthClass]} aria-hidden="true">
+              <img
+                src={`${assetBase}${logo.file}`}
+                alt=""
+                width={logo.width}
+                height="45"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          ))}
+        </div>
+      </div>
+
+      <div class="clients-fade-left" aria-hidden="true"></div>
+      <div class="clients-fade-right" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>

@@ -22,13 +22,13 @@ const sortedDocs = allDocs.sort((a: any, b: any) => (a.data.order ?? 99) - (b.da
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="bg-background-3 min-h-screen pt-28 pb-20">
+  <section class="page-shell min-h-screen pt-[132px] pb-24">
     <div class="container-main">
       <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8">
         <!-- Sidebar -->
         <aside class="hidden lg:block">
           <nav aria-label={t.docs.sidebar} class="sticky top-28">
-            <div class="space-y-1">
+            <div class="space-y-1 rounded-2xl border border-stroke-10/75 bg-white/70 p-3 backdrop-blur-sm shadow-1">
               <p class="text-tagline-2 text-secondary/60 font-medium px-3 mb-3">{t.docs.sidebar}</p>
               {sortedDocs.map((doc) => (
                 <a
@@ -45,7 +45,7 @@ const sortedDocs = allDocs.sort((a: any, b: any) => (a.data.order ?? 99) - (b.da
               ))}
             </div>
 
-            <div class="mt-8 space-y-1">
+            <div class="mt-6 space-y-1 rounded-2xl border border-stroke-10/75 bg-white/70 p-3 backdrop-blur-sm shadow-1">
               <p class="text-tagline-2 text-secondary/60 font-medium px-3 mb-3">{t.docs.legalSidebar}</p>
               <a
                 href={lp('legal/privacy/')}
@@ -85,7 +85,7 @@ const sortedDocs = allDocs.sort((a: any, b: any) => (a.data.order ?? 99) - (b.da
         </aside>
 
         <!-- Content -->
-        <article class="prose-custom bg-white rounded-2xl p-8 md:p-12 shadow-1">
+        <article class="prose-custom page-content-card p-8 md:p-12">
           <slot />
         </article>
       </div>

@@ -47,6 +47,12 @@
     "encrypted": "End-to-End Encrypted",
     "noCollection": "Zero Data Collection"
   },
+  "clients": {
+    "titleStart": "Trusted by",
+    "count": "10,000+",
+    "titleEnd": "creators and brands worldwide",
+    "marqueeAria": "Logos of trusted companies and brands using Audio Scribe"
+  },
   "features": {
     "title": "Features",
     "subtitle": "Everything you need for professional voice transcription",

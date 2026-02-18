@@ -150,7 +150,148 @@ p {
   }
 }
 
+/* Shared inner-page styling */
+.page-shell {
+  background:
+    radial-gradient(1200px 420px at 50% -180px, rgba(236, 197, 162, 0.28), rgba(236, 197, 162, 0)),
+    linear-gradient(180deg, #f5f3ef 0%, #f4f5f8 24%, #f4f5f8 100%);
+}
+
+.page-content-card {
+  border: 1px solid rgba(223, 209, 197, 0.78);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 34px rgba(26, 26, 28, 0.07);
+  backdrop-filter: blur(4px);
+}
+
+.page-grid-card {
+  border: 1px solid rgba(223, 209, 197, 0.75);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-1);
+}
+
+.page-grid-card:hover {
+  border-color: rgba(190, 171, 154, 0.6);
+  box-shadow: var(--shadow-2);
+}
+
+/* Clients marquee section */
+.clients-marquee {
+  overflow: hidden;
+}
+
+.clients-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 3.5rem;
+  animation: clients-scroll 34s linear infinite;
+  will-change: transform;
+}
+
+.clients-logo-figure {
+  margin: 0;
+  height: 45px;
+  flex-shrink: 0;
+  opacity: 0.66;
+  filter: grayscale(100%);
+  transition: opacity 0.3s ease;
+}
+
+.clients-logo-figure:hover {
+  opacity: 0.86;
+}
+
+.clients-logo-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.clients-fade-left,
+.clients-fade-right {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  height: 80px;
+  width: 80px;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #fff 39.14%);
+}
+
+.clients-fade-left {
+  left: 0;
+}
+
+.clients-fade-right {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+@keyframes clients-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 640px) {
+  .clients-fade-left,
+  .clients-fade-right {
+    height: 130px;
+  }
+}
+
+@media (min-width: 768px) {
+  .clients-fade-left,
+  .clients-fade-right {
+    width: 150px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .clients-fade-left {
+    left: -20%;
+  }
+
+  .clients-fade-right {
+    right: -20%;
+  }
+}
+
+@media (min-width: 1536px) {
+  .clients-fade-left,
+  .clients-fade-right {
+    width: 455px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-track {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .clients-logo-duplicate {
+    display: none;
+  }
+}
+
 /* Navigation menu animation states */
+.header-bar.scroll-ai-voice-header {
+  top: 0.5rem !important;
+  background-color: #1a1a1ccc !important;
+}
+
+.header-bar.scroll-inner-header-offset {
+  top: 0.5rem !important;
+}
+
 .mega-menu,
 .dropdown-menu {
   opacity: 0;

@@ -8,9 +8,9 @@ const lp = (path = '') => localePath('fr', path);
 ---
 
 <BaseLayout title={t.about.title.replace('{companyName}', SITE.companyName)}>
-  <section class="bg-background-3 min-h-screen pt-28 pb-20">
+  <section class="page-shell min-h-screen pt-[132px] pb-24">
     <div class="container-main max-w-3xl">
-      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-1">
+      <div class="page-content-card p-8 md:p-12">
         <h1 class="!text-heading-3 font-medium mb-4">{t.about.title.replace('{companyName}', SITE.companyName)}</h1>
         <p class="text-tagline-1 text-secondary/60 mb-8">
           {t.about.subtitle}

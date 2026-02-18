@@ -47,6 +47,12 @@
     "encrypted": "Cifrado de extremo a extremo",
     "noCollection": "Sin recopilación de datos"
   },
+  "clients": {
+    "titleStart": "Con la confianza de",
+    "count": "10.000+",
+    "titleEnd": "creadores y marcas de todo el mundo",
+    "marqueeAria": "Logotipos de empresas y marcas que confían en Audio Scribe"
+  },
   "features": {
     "title": "Características",
     "subtitle": "Todo lo que necesitas para la transcripción de voz profesional",

@@ -1,6 +1,6 @@
 ---
 import { SITE, ctaUrl, hasAppStoreUrl } from '../config';
-import { getTranslations, localePath, locales, localeLabels, defaultLocale } from '../i18n/utils';
+import { getTranslations, localePath, locales, localeLabels } from '../i18n/utils';
 import type { Locale } from '../i18n/utils';
 import DottedArrowIcon from './DottedArrowIcon.astro';
 
@@ -10,12 +10,28 @@ const base = import.meta.env.BASE_URL;
 const lp = (path = '') => localePath(locale, path);
 
 const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
+
+const normalizePath = (path: string) => (path.endsWith('/') ? path : `${path}/`);
+const currentPath = normalizePath(Astro.url.pathname);
+const homePaths = locales.map((loc) => normalizePath(localePath(loc)));
+const isHomePage = homePaths.includes(currentPath);
+
+const desktopNavClass = [
+  'text-tagline-1 flex items-center gap-1 rounded-full px-4 py-2 font-normal transition-all duration-300',
+  'text-accent/80 hover:text-white hover:bg-accent/5',
+].join(' ');
 ---
 
 <header>
   <!-- Floating nav bar -->
   <div
-    class="header-bar lp:!max-w-[1290px] fixed top-5 left-1/2 z-50 mx-auto flex w-full max-w-[350px] -translate-x-1/2 items-center justify-between rounded-full bg-accent/10 px-2.5 py-2.5 backdrop-blur-[15px] min-[425px]:max-w-[375px] min-[500px]:max-w-[450px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] xl:py-0"
+    data-header-theme={isHomePage ? 'home' : 'inner'}
+    class:list={[
+      'header-bar lp:!max-w-[1290px] fixed top-5 left-1/2 z-50 mx-auto flex w-full max-w-[350px] -translate-x-1/2 items-center justify-between rounded-full px-2.5 py-2.5 backdrop-blur-[15px] transition-all duration-500 ease-in-out min-[425px]:max-w-[375px] min-[500px]:max-w-[450px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] xl:py-0',
+      isHomePage
+        ? 'bg-accent/10'
+        : 'bg-secondary/80',
+    ]}
   >
     <!-- Logo -->
     <a href={lp()} class="flex items-center gap-3 pl-2">
@@ -29,7 +45,10 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
           height="32"
         />
       </span>
-      <span class="text-heading-5 font-normal text-accent leading-none hidden lg:inline">{SITE.appName}</span>
+      <span class:list={[
+        'text-heading-5 font-normal leading-none hidden lg:inline',
+        'text-accent',
+      ]}>{SITE.appName}</span>
     </a>
 
     <!-- Desktop navigation -->
@@ -39,7 +58,7 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
         <li class="nav-item relative cursor-pointer py-2.5">
           <a
             href={`${lp()}#features`}
-            class="text-tagline-1 text-accent/80 hover:text-white hover:bg-accent/5 flex items-center gap-1 rounded-full px-4 py-2 font-normal transition-all duration-300"
+            class={desktopNavClass}
           >
             {t.nav.product}
           </a>
@@ -49,7 +68,7 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
         <li class="nav-item relative cursor-pointer py-2.5" data-menu="resources-mega-menu">
           <a
             href="#"
-            class="text-tagline-1 text-accent/80 hover:text-white hover:bg-accent/5 flex items-center gap-1 rounded-full px-4 py-2 font-normal transition-all duration-300"
+            class={desktopNavClass}
             aria-haspopup="true"
             aria-expanded="false"
           >
@@ -220,7 +239,7 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
         <li class="nav-item relative cursor-pointer py-2.5">
           <a
             href={lp('about/')}
-            class="text-tagline-1 text-accent/80 hover:text-white hover:bg-accent/5 flex items-center gap-1 rounded-full px-4 py-2 font-normal transition-all duration-300"
+            class={desktopNavClass}
           >
             {t.nav.company}
           </a>
@@ -267,12 +286,12 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
     <!-- Mobile hamburger -->
     <div class="block xl:hidden">
       <button
-        class="nav-hamburger flex size-12 cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full bg-accent/10"
+        class="nav-hamburger bg-background-4 flex size-12 cursor-pointer flex-col items-center justify-center gap-[5px] rounded-full"
         aria-label="Open menu"
       >
-        <span class="block h-0.5 w-6 bg-accent/80"></span>
-        <span class="block h-0.5 w-6 bg-accent/80"></span>
-        <span class="block h-0.5 w-6 bg-accent/80"></span>
+        <span class="bg-stroke-9 block h-0.5 w-6"></span>
+        <span class="bg-stroke-9 block h-0.5 w-6"></span>
+        <span class="bg-stroke-9 block h-0.5 w-6"></span>
       </button>
     </div>
   </div>
@@ -456,18 +475,19 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
     });
 
     // Header scroll effect
-    const header = document.querySelector('.header-bar');
+    const header = document.querySelector<HTMLElement>('.header-bar');
+    const isHomeHeader = header?.dataset.headerTheme === 'home';
 
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 100) {
-        header?.classList.add('!top-2', 'bg-secondary/80');
-        header?.classList.remove('bg-accent/10');
-      } else {
-        header?.classList.remove('!top-2', 'bg-secondary/80');
-        header?.classList.add('bg-accent/10');
-      }
-    }, { passive: true });
+    const syncHeaderScrollState = () => {
+      if (!header) return;
+      const isScrolled = window.scrollY > 100;
+
+      header.classList.toggle('scroll-ai-voice-header', isScrolled && isHomeHeader);
+      header.classList.toggle('scroll-inner-header-offset', isScrolled && !isHomeHeader);
+    };
+
+    syncHeaderScrollState();
+    window.addEventListener('scroll', syncHeaderScrollState, { passive: true });
   }
 
   initNav();

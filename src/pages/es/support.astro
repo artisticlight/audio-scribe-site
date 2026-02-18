@@ -8,9 +8,9 @@ const lp = (path = '') => localePath('es', path);
 ---
 
 <BaseLayout title={t.support.title}>
-  <section class="bg-background-3 min-h-screen pt-28 pb-20">
+  <section class="page-shell min-h-screen pt-[132px] pb-24">
     <div class="container-main max-w-3xl">
-      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-1">
+      <div class="page-content-card p-8 md:p-12">
         <h1 class="!text-heading-3 font-medium mb-4">{t.support.title}</h1>
         <p class="text-tagline-1 text-secondary/60 mb-8">
           {t.support.subtitle}
@@ -20,7 +20,7 @@ const lp = (path = '') => localePath('es', path);
           <!-- General Support -->
           <a
             href={`mailto:${SITE.supportEmail}`}
-            class="group block rounded-2xl border border-stroke-2 p-6 hover:shadow-2 transition-all duration-300"
+            class="group page-grid-card block p-6 transition-all duration-300 hover:-translate-y-0.5"
           >
             <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
               <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -34,7 +34,7 @@ const lp = (path = '') => localePath('es', path);
           <!-- Bug Reports -->
           <a
             href={`mailto:${SITE.bugsEmail}`}
-            class="group block rounded-2xl border border-stroke-2 p-6 hover:shadow-2 transition-all duration-300"
+            class="group page-grid-card block p-6 transition-all duration-300 hover:-translate-y-0.5"
           >
             <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
               <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -48,7 +48,7 @@ const lp = (path = '') => localePath('es', path);
           <!-- Feature Requests -->
           <a
             href={`mailto:${SITE.featuresEmail}`}
-            class="group block rounded-2xl border border-stroke-2 p-6 hover:shadow-2 transition-all duration-300"
+            class="group page-grid-card block p-6 transition-all duration-300 hover:-translate-y-0.5"
           >
             <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
               <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -62,7 +62,7 @@ const lp = (path = '') => localePath('es', path);
           <!-- Privacy -->
           <a
             href={`mailto:${SITE.privacyEmail}`}
-            class="group block rounded-2xl border border-stroke-2 p-6 hover:shadow-2 transition-all duration-300"
+            class="group page-grid-card block p-6 transition-all duration-300 hover:-translate-y-0.5"
           >
             <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
               <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
