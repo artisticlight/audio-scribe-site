@@ -4,56 +4,52 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Marketing and documentation website for **Audio Scribe**, an iOS/macOS voice transcription app. Built with Angular 21 and Angular Material. Deployed to GitHub Pages via GitHub Actions.
+Marketing and documentation website for **Audio Scribe** (name will change), an iOS/macOS voice transcription app by **Artistic Forge**. Built with Astro 5 + Tailwind CSS 4. Deployed to GitHub Pages via GitHub Actions.
 
 ## Commands
 
-- `npm start` — dev server at localhost:4200 (hot reload)
-- `npm run build` — production build to `dist/audio-scribe-site/browser/`
-- `npm run watch` — dev build with watch mode
-- `npm run lint` — ESLint with angular-eslint (flat config in `eslint.config.js`)
-- `npm test` — unit tests via Vitest (`@angular/build:unit-test` builder, `tsconfig.spec.json`)
-- `ng generate component pages/my-page` — scaffold new component (schematics default to standalone, SCSS, skipTests)
-- `ng extract-i18n` — extract translation source file
+- `npm run dev` — dev server at localhost:4321
+- `npm run build` — production build to `dist/`
+- `npm run preview` — preview production build locally
+- `npm run check` — Astro type checking
+
+No test runner configured yet. No linter configured yet.
 
 ## Architecture
 
-**Standalone components only** — no NgModules. Each component declares its own imports. Import individual router directives (`RouterLink`, `RouterLinkActive`, `RouterOutlet`) rather than `RouterModule`. Do not import `CommonModule` — the codebase uses Angular 17+ control flow syntax (`@for`, `@if`) exclusively.
+**Astro 5 static site** — zero JS by default, opt-in via `<script>` tags in components. Pages are `.astro` files, content is Markdown via content collections.
 
-**Root component** is `App` (not `AppComponent`) in `src/app/app.ts`. Uses `ChangeDetectionStrategy.OnPush` and Angular signals for state (`isDarkMode`, `isSidenavOpen`). Prefer `OnPush` for all components.
+**Centralized branding config** — `src/config.ts` exports `SITE` (frozen object with app name, company, emails, URLs) plus derived helpers (`hasAppStoreUrl`, `ctaUrl`, `ctaLabel`). The app name WILL CHANGE — never hardcode it, always use `SITE.appName`.
 
-**Routing** — all routes use lazy loading via `loadComponent()` in `src/app/app.routes.ts`. The `/documentation` route has a parent-level redirect to `/documentation/getting-started` (separate route entry with `pathMatch: 'full'`), plus a layout component with child routes.
+**Content collections** — defined in `src/content.config.ts`. Collections: `docs`, `changelog`, `tutorials`, `legal`. Markdown files live under `src/content/en/<collection>/`. Dynamic routes in `src/pages/docs/[...slug].astro` and `src/pages/legal/[...slug].astro`.
 
-**Centralized branding config** — `src/app/app.config.constants.ts` (`APP_CONFIG`) holds app name, emails, URLs, and asset paths as a frozen `as const` object. All components must reference `APP_CONFIG` for branding — never hardcode the app name or emails.
+**Layouts** — `BaseLayout.astro` (HTML shell, header, footer, fonts), `DocsLayout.astro` (sidebar + prose styling for Markdown content).
 
-**i18n** — `@angular/localize` is initialized in `main.ts`. Templates use the `i18n` attribute on translatable elements. Dynamic strings in TypeScript (arrays of labels, titles, descriptions) use `$localize` tagged template literals. Translation files are in `src/locale/` (source: en, targets: es, fr). Extract with `ng extract-i18n`.
+**Components** — `Header.astro` (floating nav with mega menu + mobile drawer), `Footer.astro` (template-style footer with ivory background), `VoiceWaveform.astro` (SVG + GSAP animation).
 
-**Dark mode** — initialized from `localStorage` (key: `audio-scribe:darkMode`), falling back to OS `prefers-color-scheme`. Toggling persists to `localStorage`. The `dark` class is applied to `document.documentElement`.
+**Tailwind CSS 4** — uses `@tailwindcss/vite` plugin (NOT `@astrojs/tailwind`). Design tokens defined in `src/styles/global.css` via `@theme` block. Colors, typography, and shadows match the Nexsas template.
 
-## CI / Deployment
+**i18n** — configured in `astro.config.mjs` (en default, es, fr). English is unprefixed (`/`), others are prefixed (`/es/`, `/fr/`). Translation utilities in `src/i18n/utils.ts` export `getTranslations(locale)`, `localePath(locale, path)`, and `collectionName(base, locale)`. UI strings live in `src/i18n/{en,es,fr}.json`. Locale pages under `src/pages/{es,fr}/` mirror the English routes, hardcoding their locale and using relative imports. Content collections are locale-suffixed (`docs`, `docs_es`, `docs_fr`, etc.) with Markdown in `src/content/{en,es,fr}/<collection>/`. The Header includes a language switcher (desktop dropdown + mobile pills).
 
-**CI** (`.github/workflows/ci.yml`) — runs on pull requests to `main`: lint, test, production build with localization.
+## Deployment
 
-**Deploy** (`.github/workflows/deploy.yml`) — runs on push to `main`: lint, test, build, then deploys to GitHub Pages at `https://artisticlight.github.io/audio-scribe-site/`. The `baseHref` in `angular.json` is `/audio-scribe-site/`. A `public/404.html` handles SPA routing for deep links.
+GitHub Pages at `https://artisticlight.github.io/audio-scribe-site/`. Astro config: `site: 'https://artisticlight.github.io'`, `base: '/audio-scribe-site/'`. All internal links must use `import.meta.env.BASE_URL` prefix.
 
 ## Styling
 
-- **SCSS** everywhere (global + component-level inline)
-- **Angular Material** with `mat.theme()` using azure/blue palettes
-- Dark mode via CSS custom properties on `:root` / `html.dark` in `src/styles.scss`
-- CSS variables follow the pattern `--sys-*` (surface, on-surface, primary, etc.)
-- Component style budget: 5kB warning / 9kB error (`angular.json` > budgets > `anyComponentStyle`)
-- Responsive breakpoints: 599px (mobile), 768px (tablet), 992px (desktop), 1200px (wide)
-- Utility classes: `.container`, `.section`, `.hide-mobile`, `.hide-desktop`
+- **Tailwind CSS 4** with design tokens from the Nexsas template
+- Font: Inter Tight (Google Fonts)
+- Key colors: `--color-hero: #BFAB9A` (warm beige), `--color-secondary: #1a1a1c`, `--color-accent: #fcfcfc`, `--color-ns-ivory: #f4efe7`
+- Light mode only — no dark mode
+- Hero section uses `bg-secondary` with video overlay
+- Inner pages use `bg-background-3` (#f4f5f8)
+- Shadow scale: `shadow-1` (subtle) through `shadow-6` (dramatic)
 - Respect `prefers-reduced-motion` for animations
 
 ## Conventions
 
-- Prettier config is in `package.json`: 100 char width, single quotes, Angular HTML parser
-- TypeScript strict mode with `strict: true`, `noImplicitReturns`, `noFallthroughCasesInSwitch`
-- Component selector prefix: `app-`
-- Page components live under `src/app/pages/<name>/`
-- Small components use inline templates/styles; larger ones use separate `.html`/`.scss` files
 - All `<nav>` landmarks must have unique `aria-label` attributes
-- External `target="_blank"` links should include `rel="noopener noreferrer"` and a `title` attribute
-- Images should include `width`/`height` attributes to prevent CLS; use `loading="lazy"` for below-fold images
+- External `target="_blank"` links include `rel="noopener noreferrer"`
+- Images include `width`/`height` to prevent CLS; `loading="lazy"` for below-fold
+- GSAP animations loaded only where needed (VoiceWaveform component)
+- Pages under `src/pages/` follow the route structure: `/docs/*`, `/legal/*`, `/knowledge/*`, `/support`, `/about`

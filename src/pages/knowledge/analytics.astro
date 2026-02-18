@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+import { getTranslations, localePath } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = getTranslations(locale);
+const lp = (path = '') => localePath(locale, path);
+---
+
+<BaseLayout title={t.knowledge.analyticsTitle}>
+  <section class="bg-background-3 min-h-screen pt-28 pb-20">
+    <div class="container-main max-w-3xl">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-1">
+        <h1 class="!text-heading-3 font-medium mb-4">{t.knowledge.analyticsTitle}</h1>
+        <p class="text-tagline-1 text-secondary/60 mb-8">
+          {t.knowledge.analyticsSubtitle}
+        </p>
+
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-heading-5 font-medium mb-3">{t.knowledge.usageInsights}</h2>
+            <p class="text-tagline-1 text-secondary/60 leading-relaxed">
+              {t.knowledge.usageInsightsDesc.replace('{appName}', SITE.appName)}
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-heading-5 font-medium mb-3">{t.knowledge.qualityMetrics}</h2>
+            <p class="text-tagline-1 text-secondary/60 leading-relaxed">
+              {t.knowledge.qualityMetricsDesc}
+            </p>
+          </div>
+
+          <div class="bg-ns-ivory/40 rounded-2xl p-6 text-center">
+            <p class="text-tagline-1 text-secondary/60 italic">
+              {t.knowledge.analyticsComing}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

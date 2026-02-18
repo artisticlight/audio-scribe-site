@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "product": "Producto",
+    "resources": "Recursos",
+    "company": "Empresa",
+    "cta": "Obtener en la App Store",
+    "ctaFallback": "Recibir novedades"
+  },
+  "megaMenu": {
+    "helpDocs": "Ayuda y documentación",
+    "knowledge": "Conocimiento e investigación",
+    "trust": "Confianza y cumplimiento",
+    "documentation": "Documentación",
+    "documentationDesc": "Guías detalladas y referencia del producto.",
+    "tutorials": "Tutoriales",
+    "tutorialsDesc": "Guías paso a paso para empezar.",
+    "faq": "Preguntas frecuentes",
+    "faqDesc": "Preguntas frecuentes y respuestas.",
+    "support": "Soporte",
+    "supportDesc": "Obtén ayuda de nuestro equipo.",
+    "useCases": "Casos de uso",
+    "useCasesDesc": "Escenarios reales donde {appName} ofrece resultados.",
+    "analytics": "Analíticas",
+    "analyticsDesc": "Métricas de rendimiento e información detallada.",
+    "changelog": "Registro de cambios",
+    "changelogDesc": "Últimas actualizaciones y mejoras.",
+    "security": "Seguridad",
+    "securityDesc": "Cómo protegemos tus datos.",
+    "gdpr": "Cumplimiento RGPD",
+    "gdprDesc": "Conformidad con la protección de datos de la UE.",
+    "privacy": "Política de privacidad",
+    "privacyDesc": "Cómo manejamos tu información.",
+    "terms": "Términos y condiciones",
+    "termsDesc": "Términos del servicio."
+  },
+  "hero": {
+    "badge": "Ya en la App Store",
+    "badgeFallback": "Próximamente",
+    "headline": "Voz capturada con precisión.",
+    "subtitle": "Transcripción de IA en el dispositivo para Mac, iPad y iPhone. Privado por diseño, potente por naturaleza.",
+    "learnMore": "Más información",
+    "demoNote": "No se requiere registro para la demo — pruébala en tu navegador."
+  },
+  "trust": {
+    "onDevice": "100% en el dispositivo",
+    "encrypted": "Cifrado de extremo a extremo",
+    "noCollection": "Sin recopilación de datos"
+  },
+  "features": {
+    "title": "Características",
+    "subtitle": "Todo lo que necesitas para la transcripción de voz profesional",
+    "onDevice": "Procesamiento IA en el dispositivo",
+    "onDeviceDesc": "Transcribe completamente en tu dispositivo. Sin internet, sin que tus datos salgan de tus manos.",
+    "icloud": "Sincronización iCloud",
+    "icloudDesc": "Sincroniza tus transcripciones en todos tus dispositivos Apple con iCloud.",
+    "cloudModels": "Modelos en la nube",
+    "cloudModelsDesc": "Opta por los últimos modelos de IA en la nube para mayor precisión cuando lo desees."
+  },
+  "platforms": {
+    "title": "Disponible en todos tus dispositivos",
+    "subtitle": "Experiencia fluida en todo el ecosistema Apple",
+    "mac": "Mac",
+    "macDesc": "Experiencia de escritorio completa",
+    "ipad": "iPad",
+    "ipadDesc": "Optimizado para iPad y iPad Pro",
+    "iphone": "iPhone",
+    "iphoneDesc": "Graba y transcribe donde estés"
+  },
+  "cta": {
+    "title": "¿Listo para empezar?",
+    "subtitle": "Transforma cómo capturas y trabajas con la voz."
+  },
+  "footer": {
+    "tagline": "Transcripción de voz profesional para Mac, iPad y iPhone. Privado por diseño.",
+    "builtBy": "Creado por {companyName}",
+    "product": "Producto",
+    "company": "Empresa",
+    "legal": "Legal",
+    "aboutUs": "Sobre nosotros",
+    "copyright": "© {year} {companyName}. Todos los derechos reservados."
+  },
+  "support": {
+    "title": "Soporte",
+    "subtitle": "Estamos aquí para ayudarte. Elige la mejor forma de contactarnos.",
+    "general": "Soporte general",
+    "bugs": "Informes de errores",
+    "featureRequests": "Solicitudes de funciones",
+    "privacyInquiries": "Consultas de privacidad"
+  },
+  "about": {
+    "title": "Sobre {companyName}",
+    "subtitle": "Creemos que la voz es la forma más natural de capturar ideas — y que la privacidad nunca debería ser un compromiso.",
+    "missionTitle": "Nuestra misión",
+    "missionDesc": "{companyName} crea herramientas que respetan tu privacidad y ofrecen resultados profesionales. {appName} es nuestro primer producto — una aplicación de transcripción de voz que demuestra que no tienes que elegir entre calidad y privacidad.",
+    "privacyTitle": "Privacidad primero",
+    "privacyDesc": "Diseñamos {appName} con una opción de procesamiento 100% en el dispositivo. Cuando usas el modelo local, tu audio nunca sale de tu dispositivo — ni siquiera a nuestros servidores. Para los modelos en la nube, usamos cifrado de extremo a extremo y nunca almacenamos tus datos.",
+    "ecosystemTitle": "Ecosistema Apple",
+    "ecosystemDesc": "{appName} es una aplicación nativa para Mac, iPad y iPhone. Aprovechamos el Neural Engine de Apple, la sincronización de iCloud y las APIs de la plataforma para ofrecer la mejor experiencia posible en todos tus dispositivos."
+  },
+  "knowledge": {
+    "useCasesTitle": "Casos de uso",
+    "useCasesSubtitle": "Descubre cómo los profesionales usan {appName} en su trabajo diario.",
+    "journalists": "Periodistas y escritores",
+    "journalistsDesc": "Graba entrevistas y obtén transcripciones instantáneas. Concéntrate en la conversación, no en tomar notas.",
+    "meetings": "Notas de reuniones",
+    "meetingsDesc": "Captura cada detalle de reuniones y sesiones de lluvia de ideas. No te pierdas nunca una acción.",
+    "students": "Estudiantes e investigadores",
+    "studentsDesc": "Transcribe conferencias, seminarios y entrevistas de investigación. Busca entre horas de audio al instante.",
+    "creators": "Creadores de contenido",
+    "creatorsDesc": "Genera subtítulos para videos, transcribe podcasts y reutiliza contenido de audio en forma escrita.",
+    "analyticsTitle": "Analíticas",
+    "analyticsSubtitle": "Comprende tus métricas de uso y calidad de transcripción.",
+    "usageInsights": "Información de uso",
+    "usageInsightsDesc": "{appName} proporciona analíticas anónimas y agregadas para ayudarte a entender tus patrones de transcripción — frecuencia de grabación, duración promedio, preferencias de modelo y más. Todas las analíticas se quedan en tu dispositivo.",
+    "qualityMetrics": "Métricas de calidad",
+    "qualityMetricsDesc": "Rastrea la precisión de la transcripción a lo largo del tiempo y observa cómo los diferentes entornos de grabación afectan la calidad. Usa estos datos para optimizar tu flujo de trabajo.",
+    "analyticsComing": "Panel de analíticas detallado disponible en una versión futura.",
+    "securityTitle": "Seguridad",
+    "securitySubtitle": "La seguridad de tus datos es nuestra máxima prioridad. Así te protegemos.",
+    "onDeviceProcessing": "Procesamiento en el dispositivo",
+    "onDeviceProcessingDesc": "Cuando usas el modelo local, todo el procesamiento de audio ocurre localmente en tu dispositivo Apple usando el Neural Engine. No se transmite ningún dato.",
+    "e2eEncryption": "Cifrado de extremo a extremo",
+    "e2eEncryptionDesc": "La transcripción en la nube usa TLS 1.3 para datos en tránsito. El audio se cifra antes de salir de tu dispositivo y se descifra solo después de completar la transcripción.",
+    "zeroRetention": "Sin retención de datos",
+    "zeroRetentionDesc": "Nunca almacenamos tu audio o transcripciones en nuestros servidores. El procesamiento en la nube es efímero — los datos se descartan inmediatamente después de la transcripción.",
+    "icloudSecurity": "Seguridad de iCloud",
+    "icloudSecurityDesc": "Las transcripciones sincronizadas a través de iCloud están protegidas por el cifrado de Apple. No tenemos acceso a tus datos de iCloud."
+  },
+  "docs": {
+    "sidebar": "Documentación",
+    "legalSidebar": "Legal"
+  }
+}

@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+import { localePath } from '../../../i18n/utils';
+
+const docs = await getCollection('docs_fr');
+const sorted = docs.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+const first = sorted[0];
+
+return Astro.redirect(localePath('fr', `docs/${first.id}/`));
+---

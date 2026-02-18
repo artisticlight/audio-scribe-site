@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "product": "Product",
+    "resources": "Resources",
+    "company": "Company",
+    "cta": "Get it on the App Store",
+    "ctaFallback": "Get Launch Updates"
+  },
+  "megaMenu": {
+    "helpDocs": "Help & Documentation",
+    "knowledge": "Knowledge & Research",
+    "trust": "Trust & Compliance",
+    "documentation": "Documentation",
+    "documentationDesc": "Detailed guides and reference.",
+    "tutorials": "Tutorials",
+    "tutorialsDesc": "Step-by-step guides to help you get started.",
+    "faq": "FAQ",
+    "faqDesc": "Frequently asked questions and answers.",
+    "support": "Support",
+    "supportDesc": "Get help and support from our team.",
+    "useCases": "Use Cases",
+    "useCasesDesc": "Explore real-world scenarios where {appName} delivers results.",
+    "analytics": "Analytics",
+    "analyticsDesc": "Dive into performance metrics and data insights.",
+    "changelog": "Changelog",
+    "changelogDesc": "Stay updated with the latest changes and improvements.",
+    "security": "Security",
+    "securityDesc": "How we protect your data.",
+    "gdpr": "GDPR Compliance",
+    "gdprDesc": "EU data protection compliance.",
+    "privacy": "Privacy Policy",
+    "privacyDesc": "How we handle your information.",
+    "terms": "Terms & Conditions",
+    "termsDesc": "Terms of service."
+  },
+  "hero": {
+    "badge": "Now on the App Store",
+    "badgeFallback": "Coming Soon",
+    "headline": "Voice captured with precision.",
+    "subtitle": "On-device AI transcription for Mac, iPad, and iPhone. Private by design, powerful by nature.",
+    "learnMore": "Learn More",
+    "demoNote": "No signup required for demo — try it in your browser."
+  },
+  "trust": {
+    "onDevice": "100% On-Device Option",
+    "encrypted": "End-to-End Encrypted",
+    "noCollection": "Zero Data Collection"
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Everything you need for professional voice transcription",
+    "onDevice": "On-Device AI Processing",
+    "onDeviceDesc": "Transcribe entirely on your device. No internet required, no data leaves your hands.",
+    "icloud": "iCloud Sync",
+    "icloudDesc": "Seamlessly sync your transcriptions across all your Apple devices with iCloud.",
+    "cloudModels": "Cloud Model Support",
+    "cloudModelsDesc": "Opt in to the latest cloud AI models for enhanced accuracy when you choose."
+  },
+  "platforms": {
+    "title": "Available on All Your Devices",
+    "subtitle": "Seamless experience across the Apple ecosystem",
+    "mac": "Mac",
+    "macDesc": "Full-featured desktop experience",
+    "ipad": "iPad",
+    "ipadDesc": "Optimized for iPad and iPad Pro",
+    "iphone": "iPhone",
+    "iphoneDesc": "Record and transcribe on the go"
+  },
+  "cta": {
+    "title": "Ready to get started?",
+    "subtitle": "Transform how you capture and work with voice."
+  },
+  "footer": {
+    "tagline": "Professional voice transcription for Mac, iPad, and iPhone. Private by design.",
+    "builtBy": "Built by {companyName}",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "aboutUs": "About Us",
+    "copyright": "© {year} {companyName}. All rights reserved."
+  },
+  "support": {
+    "title": "Support",
+    "subtitle": "We're here to help. Choose the best way to reach us.",
+    "general": "General Support",
+    "bugs": "Bug Reports",
+    "featureRequests": "Feature Requests",
+    "privacyInquiries": "Privacy Inquiries"
+  },
+  "about": {
+    "title": "About {companyName}",
+    "subtitle": "We believe voice is the most natural way to capture ideas — and that privacy should never be a compromise.",
+    "missionTitle": "Our Mission",
+    "missionDesc": "{companyName} builds tools that respect your privacy while delivering professional-grade results. {appName} is our first product — a voice transcription app that proves you don't have to choose between quality and privacy.",
+    "privacyTitle": "Privacy First",
+    "privacyDesc": "We designed {appName} with a 100% on-device processing option. When you use the on-device model, your audio never leaves your device — not even to our servers. For cloud models, we use end-to-end encryption and never store your data.",
+    "ecosystemTitle": "Apple Ecosystem",
+    "ecosystemDesc": "{appName} is a native app built for Mac, iPad, and iPhone. We leverage Apple's Neural Engine, iCloud sync, and platform APIs to deliver the best possible experience across all your devices."
+  },
+  "knowledge": {
+    "useCasesTitle": "Use Cases",
+    "useCasesSubtitle": "Discover how professionals use {appName} in their daily workflow.",
+    "journalists": "Journalists & Writers",
+    "journalistsDesc": "Record interviews and get instant transcriptions. Focus on the conversation, not note-taking.",
+    "meetings": "Meeting Notes",
+    "meetingsDesc": "Capture every detail from meetings and brainstorming sessions. Never miss an action item again.",
+    "students": "Students & Researchers",
+    "studentsDesc": "Transcribe lectures, seminars, and research interviews. Search through hours of audio instantly.",
+    "creators": "Content Creators",
+    "creatorsDesc": "Generate subtitles for videos, transcribe podcasts, and repurpose audio content into written form.",
+    "analyticsTitle": "Analytics",
+    "analyticsSubtitle": "Understand your transcription usage and quality metrics.",
+    "usageInsights": "Usage Insights",
+    "usageInsightsDesc": "{appName} provides anonymous, aggregated analytics to help you understand your transcription patterns — recording frequency, average duration, model preferences, and more. All analytics stay on your device.",
+    "qualityMetrics": "Quality Metrics",
+    "qualityMetricsDesc": "Track transcription accuracy over time and see how different recording environments affect quality. Use these insights to optimize your workflow.",
+    "analyticsComing": "Detailed analytics dashboard coming in a future release.",
+    "securityTitle": "Security",
+    "securitySubtitle": "Your data security is our top priority. Here's how we protect you.",
+    "onDeviceProcessing": "On-Device Processing",
+    "onDeviceProcessingDesc": "When using the on-device model, all audio processing happens locally on your Apple device using the Neural Engine. Zero data is transmitted anywhere.",
+    "e2eEncryption": "End-to-End Encryption",
+    "e2eEncryptionDesc": "Cloud transcription uses TLS 1.3 for data in transit. Audio is encrypted before leaving your device and decrypted only after transcription is complete.",
+    "zeroRetention": "Zero Data Retention",
+    "zeroRetentionDesc": "We never store your audio or transcriptions on our servers. Cloud processing is ephemeral — data is discarded immediately after transcription.",
+    "icloudSecurity": "iCloud Security",
+    "icloudSecurityDesc": "Transcriptions synced via iCloud are protected by Apple's encryption. We have no access to your iCloud data."
+  },
+  "docs": {
+    "sidebar": "Documentation",
+    "legalSidebar": "Legal"
+  }
+}

@@ -1,0 +1,222 @@
+@import 'tailwindcss';
+
+/* ===== Design Tokens (from Nexsas template variables.css) ===== */
+@theme {
+  /* Font */
+  --font-inter-tight: 'Inter Tight', sans-serif;
+
+  /* Core palette */
+  --color-secondary: #1a1a1c;
+  --color-accent: #fcfcfc;
+
+  /* Hero / warm linen tones */
+  --color-hero: #BFAB9A;
+  --color-hero-light: #d4c4b5;
+  --color-hero-dark: #a89279;
+  --color-ns-linen: #beab9a;
+  --color-ns-ivory: #f4efe7;
+
+  /* Surface / background scale */
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f5f8;
+  --color-surface-warm: #f5f3ef;
+  --color-background-1: #fcfcfd;
+  --color-background-2: #f9fafb;
+  --color-background-3: #f4f5f8;
+  --color-background-4: #f0f2f6;
+  --color-background-10: #ebebeb;
+  --color-background-12: #eaeceb;
+
+  /* Text */
+  --color-text-primary: #1a1a1c;
+  --color-text-secondary: #1a1a1c99;
+  --color-text-on-hero: #fcfcfc;
+
+  /* Strokes */
+  --color-stroke-2: #e3e7ed;
+  --color-stroke-3: #d7dde5;
+  --color-stroke-10: #dfd1c5;
+
+  /* Typography scale */
+  --text-heading-1: 4.25rem;
+  --text-heading-1--line-height: 110%;
+  --text-heading-2: 3.25rem;
+  --text-heading-2--line-height: 120%;
+  --text-heading-3: 2.5rem;
+  --text-heading-3--line-height: 120%;
+  --text-heading-4: 2rem;
+  --text-heading-4--line-height: 130%;
+  --text-heading-5: 1.5rem;
+  --text-heading-5--line-height: 140%;
+  --text-heading-6: 1.25rem;
+  --text-heading-6--line-height: 140%;
+  --text-tagline-1: 1rem;
+  --text-tagline-1--line-height: 150%;
+  --text-tagline-2: 0.875rem;
+  --text-tagline-2--line-height: 150%;
+  --text-tagline-3: 0.75rem;
+  --text-tagline-3--line-height: 150%;
+
+  /* Shadows (template shadow scale) */
+  --shadow-1: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-2: 0px 10px 20px -5px rgba(28, 34, 43, 0.05), 0px 20px 65px -5px rgba(28, 34, 43, 0.05);
+  --shadow-3: 0px 25px 80px -12px rgba(28, 34, 43, 0.1);
+  --shadow-6: 0px 44px 64px 0px rgba(29, 32, 35, 0.16);
+  --shadow-7: 0px 4px 6px -1px rgba(28, 34, 43, 0.1), 0px 2px 4px -1px rgba(28, 34, 43, 0.05);
+  --shadow-15: 40px 28px 80px 0 rgba(0, 0, 0, 0.08);
+
+  /* Warm gradient (hero → ivory fade) */
+  --color-gradient-13: linear-gradient(156deg, #fff 32.92%, #ecc5a2 91%);
+
+  /* Container */
+  --width-container: 1290px;
+
+  /* Breakpoint */
+  --breakpoint-lp: 1440px;
+}
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-inter-tight);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base typography from template */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter-tight);
+  color: var(--color-secondary);
+}
+
+h1 {
+  font-size: var(--text-heading-4);
+  line-height: var(--text-heading-4--line-height);
+  font-weight: 500;
+}
+@media (min-width: 640px) { h1 { font-size: var(--text-heading-3); line-height: var(--text-heading-3--line-height); } }
+@media (min-width: 768px) { h1 { font-size: var(--text-heading-2); line-height: var(--text-heading-2--line-height); } }
+@media (min-width: 1280px) { h1 { font-size: var(--text-heading-1); line-height: var(--text-heading-1--line-height); } }
+
+h2 {
+  font-size: var(--text-heading-5);
+  line-height: var(--text-heading-5--line-height);
+}
+@media (min-width: 640px) { h2 { font-size: var(--text-heading-4); line-height: var(--text-heading-4--line-height); } }
+@media (min-width: 768px) { h2 { font-size: var(--text-heading-3); line-height: var(--text-heading-3--line-height); } }
+@media (min-width: 1280px) { h2 { font-size: var(--text-heading-2); line-height: var(--text-heading-2--line-height); } }
+
+p {
+  font-size: var(--text-tagline-2);
+  line-height: var(--text-tagline-2--line-height);
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+@media (min-width: 640px) {
+  p {
+    font-size: var(--text-tagline-1);
+    line-height: var(--text-tagline-1--line-height);
+  }
+}
+
+/* ===== Utility Classes ===== */
+.container-main {
+  max-width: var(--width-container);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-main {
+    padding-inline: 2rem;
+  }
+}
+
+/* Navigation menu animation states */
+.mega-menu,
+.dropdown-menu {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0.3s;
+  visibility: hidden;
+}
+
+.mega-menu.active,
+.dropdown-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
+  transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0s;
+}
+
+/* Focus states for accessibility */
+.nav-item:focus-within .mega-menu,
+.nav-item:focus-within .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Footer link hover underline */
+.footer-link {
+  position: relative;
+  display: inline-block;
+  font-size: var(--text-tagline-1);
+  line-height: var(--text-tagline-1--line-height);
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.footer-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0;
+  transition: width 0.3s;
+}
+
+.footer-link:hover::before {
+  width: 100%;
+}
+
+/* Footer social link */
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.footer-social-link:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 1279px) {
+  .mega-menu,
+  .dropdown-menu {
+    display: none !important;
+  }
+}

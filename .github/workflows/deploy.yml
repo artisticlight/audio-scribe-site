@@ -26,15 +26,13 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run lint
+      - run: npm run check
 
-      - run: npm test
-
-      - run: npx ng build --configuration production --localize
+      - run: npm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/audio-scribe-site/browser
+          path: dist
 
   deploy:
     needs: build

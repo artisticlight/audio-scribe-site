@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+import { getTranslations, localePath } from '../../i18n/utils';
+
+const t = getTranslations('es');
+const lp = (path = '') => localePath('es', path);
+---
+
+<BaseLayout title={t.support.title}>
+  <section class="bg-background-3 min-h-screen pt-28 pb-20">
+    <div class="container-main max-w-3xl">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-1">
+        <h1 class="!text-heading-3 font-medium mb-4">{t.support.title}</h1>
+        <p class="text-tagline-1 text-secondary/60 mb-8">
+          {t.support.subtitle}
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- General Support -->
+          <a
+            href={`mailto:${SITE.supportEmail}`}
+            class="group block rounded-2xl border border-stroke-2 p-6 hover:shadow-2 transition-all duration-300"
+          >
+            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-heading-6 font-medium mb-2">{t.support.general}</h3>
+            <p class="text-tagline-2 text-secondary/60">{SITE.supportEmail}</p>
+          </a>
+
+          <!-- Bug Reports -->
+          <a
+            href={`mailto:${SITE.bugsEmail}`}
+            class="group block rounded-2xl border border-stroke-2 p-6 hover:shadow-2 transition-all duration-300"
+          >
+            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <h3 class="text-heading-6 font-medium mb-2">{t.support.bugs}</h3>
+            <p class="text-tagline-2 text-secondary/60">{SITE.bugsEmail}</p>
+          </a>
+
+          <!-- Feature Requests -->
+          <a
+            href={`mailto:${SITE.featuresEmail}`}
+            class="group block rounded-2xl border border-stroke-2 p-6 hover:shadow-2 transition-all duration-300"
+          >
+            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3 class="text-heading-6 font-medium mb-2">{t.support.featureRequests}</h3>
+            <p class="text-tagline-2 text-secondary/60">{SITE.featuresEmail}</p>
+          </a>
+
+          <!-- Privacy -->
+          <a
+            href={`mailto:${SITE.privacyEmail}`}
+            class="group block rounded-2xl border border-stroke-2 p-6 hover:shadow-2 transition-all duration-300"
+          >
+            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="text-heading-6 font-medium mb-2">{t.support.privacyInquiries}</h3>
+            <p class="text-tagline-2 text-secondary/60">{SITE.privacyEmail}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

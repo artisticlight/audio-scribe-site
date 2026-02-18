@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+
+const docs = await getCollection('docs');
+const sorted = docs.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+const first = sorted[0];
+
+// Redirect to the first doc page
+return Astro.redirect(`${import.meta.env.BASE_URL}docs/${first.id}/`);
+---

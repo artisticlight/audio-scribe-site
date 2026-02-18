@@ -1,0 +1,85 @@
+---
+import { SITE } from '../config';
+import { getTranslations, localePath } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = getTranslations(locale);
+const base = import.meta.env.BASE_URL;
+const lp = (path = '') => localePath(locale, path);
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="w-full bg-white px-4 pb-4">
+  <div class="bg-ns-ivory rounded-2xl">
+    <div class="container-main px-5">
+      <div class="grid grid-cols-12 justify-between gap-x-0 gap-y-16 pt-16 pb-12 xl:pt-[90px]">
+        <!-- Brand column -->
+        <div class="col-span-12 xl:col-span-4">
+          <div class="max-w-[306px]">
+            <a href={lp()} class="flex items-center gap-2">
+              <img src={`${base}assets/logo.png`} alt={SITE.appName} class="h-8 w-auto" width="32" height="32" />
+              <span class="text-heading-6 font-medium text-secondary">{SITE.appName}</span>
+            </a>
+            <p class="text-secondary/60 text-tagline-1 mt-4 mb-7 font-normal">
+              {t.footer.tagline}
+            </p>
+            <p class="text-tagline-2 text-secondary/60 font-normal">
+              {t.footer.builtBy.replace('{companyName}', SITE.companyName)}
+            </p>
+          </div>
+        </div>
+
+        <!-- Link columns -->
+        <div class="col-span-12 grid grid-cols-12 gap-x-0 gap-y-8 xl:col-span-8">
+          <!-- Product -->
+          <div class="col-span-12 md:col-span-4">
+            <div class="space-y-8">
+              <p class="sm:text-heading-6 text-tagline-1 text-secondary font-normal">{t.footer.product}</p>
+              <ul class="space-y-3 sm:space-y-5">
+                <li><a href={lp('docs/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.documentation}</a></li>
+                <li><a href={lp('docs/tutorials/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.tutorials}</a></li>
+                <li><a href={lp('docs/faq/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.faq}</a></li>
+                <li><a href={lp('support/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.support}</a></li>
+                <li><a href={lp('docs/changelog/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.changelog}</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Company -->
+          <div class="col-span-12 md:col-span-4">
+            <div class="space-y-8">
+              <p class="sm:text-heading-6 text-tagline-1 text-secondary font-normal">{t.footer.company}</p>
+              <ul class="space-y-3 sm:space-y-5">
+                <li><a href={lp('about/')} class="footer-link text-secondary before:bg-secondary">{t.footer.aboutUs}</a></li>
+                <li><a href={lp('knowledge/use-cases/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.useCases}</a></li>
+                <li><a href={lp('knowledge/analytics/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.analytics}</a></li>
+                <li><a href={lp('knowledge/security/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.security}</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Legal -->
+          <div class="col-span-12 md:col-span-4">
+            <div class="space-y-8">
+              <p class="sm:text-heading-6 text-tagline-1 text-secondary font-normal">{t.footer.legal}</p>
+              <ul class="space-y-3 sm:space-y-5">
+                <li><a href={lp('legal/privacy/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.privacy}</a></li>
+                <li><a href={lp('legal/terms/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.terms}</a></li>
+                <li><a href={lp('legal/gdpr/')} class="footer-link text-secondary before:bg-secondary">{t.megaMenu.gdpr}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="relative pt-[26px] pb-[100px] text-center">
+        <div class="bg-stroke-10 absolute top-0 right-0 left-0 mx-auto h-px"></div>
+        <p class="text-tagline-1 text-secondary font-normal">
+          {t.footer.copyright.replace('{year}', String(currentYear)).replace('{companyName}', SITE.companyName)}
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { SITE } from '../../../config';
+import { getTranslations, localePath } from '../../../i18n/utils';
+
+const t = getTranslations('es');
+const lp = (path = '') => localePath('es', path);
+---
+
+<BaseLayout title={t.knowledge.securityTitle}>
+  <section class="bg-background-3 min-h-screen pt-28 pb-20">
+    <div class="container-main max-w-3xl">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-1">
+        <h1 class="!text-heading-3 font-medium mb-4">{t.knowledge.securityTitle}</h1>
+        <p class="text-tagline-1 text-secondary/60 mb-8">
+          {t.knowledge.securitySubtitle}
+        </p>
+
+        <div class="space-y-8">
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <div>
+              <h2 class="text-heading-6 font-medium mb-2">{t.knowledge.onDeviceProcessing}</h2>
+              <p class="text-tagline-1 text-secondary/60 leading-relaxed">
+                {t.knowledge.onDeviceProcessingDesc}
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </div>
+            <div>
+              <h2 class="text-heading-6 font-medium mb-2">{t.knowledge.e2eEncryption}</h2>
+              <p class="text-tagline-1 text-secondary/60 leading-relaxed">
+                {t.knowledge.e2eEncryptionDesc}
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </div>
+            <div>
+              <h2 class="text-heading-6 font-medium mb-2">{t.knowledge.zeroRetention}</h2>
+              <p class="text-tagline-1 text-secondary/60 leading-relaxed">
+                {t.knowledge.zeroRetentionDesc}
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+            </div>
+            <div>
+              <h2 class="text-heading-6 font-medium mb-2">{t.knowledge.icloudSecurity}</h2>
+              <p class="text-tagline-1 text-secondary/60 leading-relaxed">
+                {t.knowledge.icloudSecurityDesc}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

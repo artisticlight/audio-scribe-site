@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { SITE } from '../../../config';
+import { getTranslations, localePath } from '../../../i18n/utils';
+
+const t = getTranslations('es');
+const lp = (path = '') => localePath('es', path);
+---
+
+<BaseLayout title={t.knowledge.useCasesTitle}>
+  <section class="bg-background-3 min-h-screen pt-28 pb-20">
+    <div class="container-main">
+      <div class="text-center mb-16">
+        <h1 class="!text-heading-3 md:!text-heading-2 font-medium mb-4">{t.knowledge.useCasesTitle}</h1>
+        <p class="max-w-xl mx-auto">{t.knowledge.useCasesSubtitle.replace('{appName}', SITE.appName)}</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl p-8 shadow-1 border border-stroke-2">
+          <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3 class="text-heading-6 font-medium mb-2">{t.knowledge.journalists}</h3>
+          <p class="text-tagline-1 text-secondary/60">{t.knowledge.journalistsDesc}</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-1 border border-stroke-2">
+          <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="text-heading-6 font-medium mb-2">{t.knowledge.meetings}</h3>
+          <p class="text-tagline-1 text-secondary/60">{t.knowledge.meetingsDesc}</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-1 border border-stroke-2">
+          <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 016.5 2H20v20H6.5a2.5 2.5 0 010-5H20"/></svg>
+          </div>
+          <h3 class="text-heading-6 font-medium mb-2">{t.knowledge.students}</h3>
+          <p class="text-tagline-1 text-secondary/60">{t.knowledge.studentsDesc}</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-1 border border-stroke-2">
+          <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="text-heading-6 font-medium mb-2">{t.knowledge.creators}</h3>
+          <p class="text-tagline-1 text-secondary/60">{t.knowledge.creatorsDesc}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
