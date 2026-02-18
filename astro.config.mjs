@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://artisticlight.github.io',
   base: '/audio-scribe-site/',
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [/** @type {any} */ (tailwindcss())],
   },
   i18n: {
     defaultLocale: 'en',
