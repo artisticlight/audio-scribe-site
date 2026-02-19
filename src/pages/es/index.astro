@@ -25,7 +25,13 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
     </video>
     <div class="container-main relative z-10">
       <div class="lp:space-y-34 space-y-10 md:space-y-15">
-        <div class="mx-auto space-y-10 text-center lg:space-y-14">
+        <div
+          class="mx-auto space-y-10 text-center lg:space-y-14"
+          data-reveal-group
+          data-reveal-distance="72"
+          data-reveal-duration="0.7"
+          data-reveal-stagger="0.14"
+        >
           <div class="space-y-3 text-center">
             <div class="space-y-5">
               <span
@@ -71,7 +77,9 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
             <i class="text-tagline-3 text-accent font-normal">{t.hero.demoNote}</i>
           </div>
         </div>
-        <div class="-mt-8 flex items-center justify-center"><VoiceWaveform /></div>
+        <div class="-mt-8 flex items-center justify-center" data-reveal data-reveal-delay="0.16">
+          <VoiceWaveform />
+        </div>
       </div>
     </div>
   </section>
@@ -81,11 +89,15 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
   <!-- Features -->
   <section id="features" class="bg-surface py-20 md:py-32">
     <div class="container-main">
-      <div class="mb-16 text-center">
+      <div class="mb-16 text-center" data-reveal>
         <h2 class="mb-4 font-medium">{t.features.title}</h2>
         <p class="mx-auto max-w-xl">{t.features.subtitle}</p>
       </div>
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div
+        class="grid grid-cols-1 gap-8 md:grid-cols-3"
+        data-reveal-group
+        data-reveal-stagger="0.14"
+      >
         <div
           class="bg-background-1 border-stroke-2 group hover:shadow-2 relative overflow-hidden rounded-3xl border p-8 transition-all duration-500"
         >
@@ -161,11 +173,15 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
   <!-- Platforms -->
   <section class="bg-background-3 py-20 md:py-32">
     <div class="container-main">
-      <div class="mb-16 text-center">
+      <div class="mb-16 text-center" data-reveal>
         <h2 class="mb-4 font-medium">{t.platforms.title}</h2>
         <p>{t.platforms.subtitle}</p>
       </div>
-      <div class="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-3">
+      <div
+        class="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-3"
+        data-reveal-group
+        data-reveal-stagger="0.14"
+      >
         <div class="p-8 text-center">
           <div
             class="shadow-1 mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white"
@@ -223,7 +239,7 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
 
   <!-- CTA -->
   <section class="bg-ns-ivory py-20 md:py-32">
-    <div class="container-main text-center">
+    <div class="container-main text-center" data-reveal-group data-reveal-stagger="0.12">
       <h2 class="mb-4 font-medium">{t.cta.title}</h2>
       <p class="text-tagline-1 mb-10">{t.cta.subtitle}</p>
       <a

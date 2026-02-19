@@ -12,7 +12,7 @@ const lp = (path = '') => localePath(locale, path);
 <BaseLayout title={t.knowledge.useCasesTitle}>
   <section class="page-shell min-h-screen pt-[132px] pb-24">
     <div class="container-main">
-      <div class="mb-16 text-center">
+      <div class="mb-16 text-center" data-reveal-group data-reveal-stagger="0.12">
         <h1 class="!text-heading-3 md:!text-heading-2 mb-4 font-medium">
           {t.knowledge.useCasesTitle}
         </h1>
@@ -21,7 +21,12 @@ const lp = (path = '') => localePath(locale, path);
         </p>
       </div>
 
-      <div class="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+      <div
+        class="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2"
+        data-reveal-group
+        data-reveal-stagger="0.12"
+        data-reveal-distance="50"
+      >
         <div class="page-grid-card p-8">
           <div class="bg-ns-ivory mb-4 flex h-12 w-12 items-center justify-center rounded-xl">
             <svg

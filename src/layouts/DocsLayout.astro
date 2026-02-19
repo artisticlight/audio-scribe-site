@@ -30,7 +30,12 @@ const sortedDocs = allDocs.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?
     <div class="container-main">
       <div class="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
         <!-- Sidebar -->
-        <aside class="hidden lg:block">
+        <aside
+          class="hidden lg:block"
+          data-reveal
+          data-reveal-direction="left"
+          data-reveal-distance="36"
+        >
           <nav aria-label={t.docs.sidebar} class="sticky top-28">
             <div
               class="border-stroke-10/75 shadow-1 space-y-1 rounded-2xl border bg-white/70 p-3 backdrop-blur-sm"
@@ -97,7 +102,13 @@ const sortedDocs = allDocs.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?
         </aside>
 
         <!-- Content -->
-        <article class="prose-custom page-content-card p-8 md:p-12">
+        <article
+          class="prose-custom page-content-card p-8 md:p-12"
+          data-reveal-group
+          data-reveal-stagger="0.04"
+          data-reveal-distance="28"
+          data-reveal-delay="0.08"
+        >
           <slot />
         </article>
       </div>

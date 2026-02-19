@@ -1,0 +1,194 @@
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  interface RevealOptions {
+    direction?: 'left' | 'right' | 'down' | 'up';
+    duration?: number;
+    delay?: number;
+    distance?: number;
+    blur?: number;
+    ease?: string;
+    start?: string;
+    end?: string;
+    instant?: boolean;
+    once?: boolean;
+    scrub?: boolean;
+  }
+  type RevealDirection = NonNullable<RevealOptions['direction']>;
+
+  let pluginsRegistered = false;
+
+  const parseNumber = (value: string | undefined, fallback: number) => {
+    const parsed = Number.parseFloat(value ?? '');
+    return Number.isFinite(parsed) ? parsed : fallback;
+  };
+
+  const parseBool = (value: string | undefined, fallback: boolean) => {
+    if (value == null) return fallback;
+    if (value === 'true') return true;
+    if (value === 'false') return false;
+    return fallback;
+  };
+
+  const parseDirection = (value: string | undefined): RevealDirection => {
+    if (value === 'left' || value === 'right' || value === 'up' || value === 'down') {
+      return value;
+    }
+    return 'down';
+  };
+
+  const prefersReducedMotion = () =>
+    globalThis.window?.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+
+  const registerPlugins = () => {
+    if (pluginsRegistered) return;
+    gsap.registerPlugin(ScrollTrigger);
+    pluginsRegistered = true;
+  };
+
+  const cleanupOrphanTriggers = () => {
+    ScrollTrigger.getAll().forEach((trigger) => {
+      const triggerElement = trigger.vars.trigger;
+      if (triggerElement instanceof Element && !document.contains(triggerElement)) {
+        trigger.kill();
+      }
+    });
+  };
+
+  const revealElement = (element: HTMLElement, options: RevealOptions = {}) => {
+    if (element.dataset.motionRevealInit === '1') return;
+    element.dataset.motionRevealInit = '1';
+
+    if (prefersReducedMotion()) {
+      gsap.set(element, { clearProps: 'all', autoAlpha: 1, x: 0, y: 0, filter: 'blur(0px)' });
+      return;
+    }
+
+    const direction = options.direction ?? parseDirection(element.dataset.revealDirection);
+    const duration = options.duration ?? parseNumber(element.dataset.revealDuration, 0.6);
+    const delay = options.delay ?? parseNumber(element.dataset.revealDelay, 0);
+    const distance = options.distance ?? parseNumber(element.dataset.revealDistance, 60);
+    const blur = options.blur ?? parseNumber(element.dataset.revealBlur, 16);
+    const ease = options.ease ?? element.dataset.revealEase ?? 'power2.out';
+    const start = options.start ?? element.dataset.revealStart ?? 'top 90%';
+    const end = options.end ?? element.dataset.revealEnd ?? 'top 50%';
+    const instant = options.instant ?? parseBool(element.dataset.revealInstant, false);
+    const once = options.once ?? parseBool(element.dataset.revealOnce, false);
+    const scrub = options.scrub ?? parseBool(element.dataset.revealScrub, false);
+
+    let x = 0;
+    let y = 0;
+    if (direction === 'left') x = -distance;
+    if (direction === 'right') x = distance;
+    if (direction === 'down') y = distance;
+    if (direction === 'up') y = -distance;
+
+    const animation = {
+      autoAlpha: 1,
+      x: 0,
+      y: 0,
+      filter: 'blur(0px)',
+      duration,
+      delay,
+      ease,
+      overwrite: 'auto' as const,
+      ...(!instant
+        ? {
+            scrollTrigger: {
+              trigger: element,
+              start,
+              end,
+              once,
+              scrub,
+              toggleActions: once ? 'play none none none' : 'play none none reverse',
+              invalidateOnRefresh: true,
+            },
+          }
+        : {}),
+    };
+
+    gsap.fromTo(
+      element,
+      {
+        autoAlpha: 0,
+        x,
+        y,
+        filter: `blur(${blur}px)`,
+      },
+      animation,
+    );
+  };
+
+  const initRevealGroups = (root: Document | Element) => {
+    const groups = root.querySelectorAll('[data-reveal-group]');
+
+    groups.forEach((group) => {
+      if (!(group instanceof HTMLElement)) return;
+      if (group.dataset.motionRevealGroupInit === '1') return;
+      group.dataset.motionRevealGroupInit = '1';
+
+      const childSelector = group.dataset.revealChildren ?? ':scope > *';
+      const baseDelay = parseNumber(group.dataset.revealDelay, 0);
+      const stagger = parseNumber(group.dataset.revealStagger, 0.08);
+      const distance = parseNumber(group.dataset.revealDistance, 60);
+      const blur = parseNumber(group.dataset.revealBlur, 16);
+      const duration = parseNumber(group.dataset.revealDuration, 0.6);
+      const direction = parseDirection(group.dataset.revealDirection);
+      const start = group.dataset.revealStart ?? 'top 90%';
+      const end = group.dataset.revealEnd ?? 'top 50%';
+      const instant = parseBool(group.dataset.revealInstant, false);
+      const once = parseBool(group.dataset.revealOnce, false);
+      const scrub = parseBool(group.dataset.revealScrub, false);
+      const ease = group.dataset.revealEase ?? 'power2.out';
+
+      const children = Array.from(group.querySelectorAll(childSelector)).filter(
+        (child): child is HTMLElement =>
+          child instanceof HTMLElement &&
+          child.dataset.noReveal !== 'true' &&
+          !child.hasAttribute('hidden'),
+      );
+
+      children.forEach((child, index) => {
+        revealElement(child, {
+          delay: baseDelay + index * stagger,
+          distance,
+          blur,
+          duration,
+          direction,
+          start,
+          end,
+          instant,
+          once,
+          scrub,
+          ease,
+        });
+      });
+    });
+  };
+
+  const initSingleReveals = (root: Document | Element) => {
+    const elements = root.querySelectorAll('[data-reveal]');
+    elements.forEach((element) => {
+      if (!(element instanceof HTMLElement)) return;
+      if (element.closest('[data-reveal-group]')) return;
+      revealElement(element);
+    });
+  };
+
+  const initMotion = (root = document) => {
+    registerPlugins();
+    cleanupOrphanTriggers();
+    initRevealGroups(root);
+    initSingleReveals(root);
+    ScrollTrigger.refresh();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => initMotion(), { once: true });
+  } else {
+    initMotion();
+  }
+
+  document.addEventListener('astro:after-swap', () => initMotion());
+</script>

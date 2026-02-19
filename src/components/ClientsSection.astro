@@ -30,7 +30,13 @@ const logos = [
 
 <section class="py-16 lg:py-28 xl:py-39" aria-label={copy.marqueeAria}>
   <div class="container-main">
-    <div class="relative overflow-hidden text-center">
+    <div
+      class="relative overflow-hidden text-center"
+      data-reveal-group
+      data-reveal-children=":scope > h2, :scope > .clients-marquee"
+      data-reveal-stagger="0.12"
+      data-reveal-distance="48"
+    >
       <h2 class="mx-auto mb-14 max-w-[800px] text-center font-normal">
         {copy.titleStart}
         <span class="text-ns-linen"> {copy.count}</span>

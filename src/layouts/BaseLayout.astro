@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { SITE } from '../config';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import MotionEffects from '../components/MotionEffects.astro';
 
 interface Props {
   title?: string;
@@ -51,5 +52,6 @@ const pageTitle = title === SITE.appName ? title : `${title} | ${SITE.appName}`;
       <slot />
     </main>
     {!hideFooter && <Footer />}
+    <MotionEffects />
   </body>
 </html>

@@ -13,7 +13,12 @@ const currentYear = new Date().getFullYear();
 <footer class="w-full bg-white px-4 pb-4">
   <div class="bg-ns-ivory rounded-2xl">
     <div class="container-main px-5">
-      <div class="grid grid-cols-12 justify-between gap-x-0 gap-y-16 pt-16 pb-12 xl:pt-[90px]">
+      <div
+        class="grid grid-cols-12 justify-between gap-x-0 gap-y-16 pt-16 pb-12 xl:pt-[90px]"
+        data-reveal-group
+        data-reveal-stagger="0.1"
+        data-reveal-distance="40"
+      >
         <!-- Brand column -->
         <div class="col-span-12 xl:col-span-4">
           <div class="max-w-[306px]">
@@ -141,7 +146,7 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Copyright -->
-      <div class="relative pt-[26px] pb-[100px] text-center">
+      <div class="relative pt-[26px] pb-[100px] text-center" data-reveal data-reveal-delay="0.05">
         <div class="bg-stroke-10 absolute top-0 right-0 left-0 mx-auto h-px"></div>
         <p class="text-tagline-1 text-secondary font-normal">
           {

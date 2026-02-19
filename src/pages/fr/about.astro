@@ -11,14 +11,14 @@ const lp = (path = '') => localePath('fr', path);
   <section class="page-shell min-h-screen pt-[132px] pb-24">
     <div class="container-main max-w-3xl">
       <div class="page-content-card p-8 md:p-12">
-        <h1 class="!text-heading-3 mb-4 font-medium">
+        <h1 class="!text-heading-3 mb-4 font-medium" data-reveal>
           {t.about.title.replace('{companyName}', SITE.companyName)}
         </h1>
-        <p class="text-tagline-1 text-secondary/60 mb-8">
+        <p class="text-tagline-1 text-secondary/60 mb-8" data-reveal data-reveal-delay="0.08">
           {t.about.subtitle}
         </p>
 
-        <div class="space-y-8">
+        <div class="space-y-8" data-reveal-group data-reveal-delay="0.14" data-reveal-distance="44">
           <div>
             <h2 class="text-heading-5 mb-3 font-medium">{t.about.missionTitle}</h2>
             <p class="text-tagline-1 text-secondary/60 leading-relaxed">

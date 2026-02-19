@@ -11,12 +11,18 @@ const lp = (path = '') => localePath('fr', path);
   <section class="page-shell min-h-screen pt-[132px] pb-24">
     <div class="container-main max-w-3xl">
       <div class="page-content-card p-8 md:p-12">
-        <h1 class="!text-heading-3 mb-4 font-medium">{t.support.title}</h1>
-        <p class="text-tagline-1 text-secondary/60 mb-8">
+        <h1 class="!text-heading-3 mb-4 font-medium" data-reveal>{t.support.title}</h1>
+        <p class="text-tagline-1 text-secondary/60 mb-8" data-reveal data-reveal-delay="0.08">
           {t.support.subtitle}
         </p>
 
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div
+          class="grid grid-cols-1 gap-6 md:grid-cols-2"
+          data-reveal-group
+          data-reveal-delay="0.14"
+          data-reveal-stagger="0.12"
+          data-reveal-distance="48"
+        >
           <!-- General Support -->
           <a
             href={`mailto:${SITE.supportEmail}`}
