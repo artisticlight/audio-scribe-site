@@ -24,41 +24,54 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
       <source src={`${import.meta.env.BASE_URL}video/big-circle.mp4`} type="video/mp4" />
     </video>
     <div class="container-main relative z-10">
-      <div class="space-y-10 md:space-y-15 lp:space-y-34">
+      <div class="lp:space-y-34 space-y-10 md:space-y-15">
         <div class="mx-auto space-y-10 text-center lg:space-y-14">
           <div class="space-y-3 text-center">
             <div class="space-y-5">
               <span
                 class:list={[
-                  'inline-block rounded-full px-5 py-2 text-tagline-2 text-accent/80 backdrop-blur-sm',
-                  hasAppStoreUrl ? 'border border-accent/30' : 'bg-accent/10',
+                  'text-tagline-2 text-accent/80 inline-block rounded-full px-5 py-2 backdrop-blur-sm',
+                  hasAppStoreUrl ? 'border-accent/30 border' : 'bg-accent/10',
                 ]}
               >
                 {hasAppStoreUrl ? t.hero.badge : t.hero.badgeFallback}
               </span>
-              <h1 class="!mx-auto !max-w-[350px] !text-heading-3 !leading-[110%] !text-accent lg:!max-w-[500px] lg:!text-heading-1">{t.hero.headline}</h1>
+              <h1
+                class="!text-heading-3 !text-accent lg:!text-heading-1 !mx-auto !max-w-[350px] !leading-[110%] lg:!max-w-[500px]"
+              >
+                {t.hero.headline}
+              </h1>
             </div>
-            <p class="!mx-auto !max-w-[465px] !text-accent/80 font-normal">{t.hero.subtitle}</p>
+            <p class="!text-accent/80 !mx-auto !max-w-[465px] font-normal">{t.hero.subtitle}</p>
           </div>
           <div class="space-y-7">
-            <div class="flex flex-col items-center justify-center gap-y-4 md:flex-row md:gap-x-4 md:gap-y-0">
+            <div
+              class="flex flex-col items-center justify-center gap-y-4 md:flex-row md:gap-x-4 md:gap-y-0"
+            >
               <div class="w-[85%] md:w-auto">
-                <a href={ctaUrl} class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-tagline-1 font-normal text-secondary shadow-1 transition-all duration-300 hover:scale-[1.02] md:w-auto" {...(!hasAppStoreUrl ? {} : { target: '_blank', rel: 'noopener noreferrer' })}>
+                <a
+                  href={ctaUrl}
+                  class="text-tagline-1 text-secondary shadow-1 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 font-normal transition-all duration-300 hover:scale-[1.02] md:w-auto"
+                  {...!hasAppStoreUrl ? {} : { target: '_blank', rel: 'noopener noreferrer' }}
+                >
                   {ctaText}
-                  <DottedArrowIcon class="size-4 text-secondary" />
+                  <DottedArrowIcon class="text-secondary size-4" />
                 </a>
               </div>
               <div class="w-[85%] md:w-auto">
-                <a href={lp('docs/')} class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-accent/30 px-8 py-3.5 text-tagline-1 font-normal text-accent backdrop-blur-sm transition-all duration-300 hover:bg-accent/10 md:w-auto">
+                <a
+                  href={lp('docs/')}
+                  class="border-accent/30 text-tagline-1 text-accent hover:bg-accent/10 inline-flex w-full items-center justify-center gap-2 rounded-full border px-8 py-3.5 font-normal backdrop-blur-sm transition-all duration-300 md:w-auto"
+                >
                   {t.hero.learnMore}
-                  <DottedArrowIcon class="size-4 text-accent" />
+                  <DottedArrowIcon class="text-accent size-4" />
                 </a>
               </div>
             </div>
             <i class="text-tagline-3 text-accent font-normal">{t.hero.demoNote}</i>
           </div>
         </div>
-        <div class="flex items-center justify-center -mt-8"><VoiceWaveform /></div>
+        <div class="-mt-8 flex items-center justify-center"><VoiceWaveform /></div>
       </div>
     </div>
   </section>
@@ -66,40 +79,78 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
   <ClientsSection copy={t.clients} />
 
   <!-- Features -->
-  <section id="features" class="py-20 md:py-32 bg-surface">
+  <section id="features" class="bg-surface py-20 md:py-32">
     <div class="container-main">
-      <div class="text-center mb-16">
-        <h2 class="font-medium mb-4">{t.features.title}</h2>
-        <p class="max-w-xl mx-auto">{t.features.subtitle}</p>
+      <div class="mb-16 text-center">
+        <h2 class="mb-4 font-medium">{t.features.title}</h2>
+        <p class="mx-auto max-w-xl">{t.features.subtitle}</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="relative rounded-3xl bg-background-1 border border-stroke-2 p-8 overflow-hidden group hover:shadow-2 transition-all duration-500">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-ns-linen/20 to-transparent rounded-bl-full"></div>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div
+          class="bg-background-1 border-stroke-2 group hover:shadow-2 relative overflow-hidden rounded-3xl border p-8 transition-all duration-500"
+        >
+          <div
+            class="from-ns-linen/20 absolute top-0 right-0 h-32 w-32 rounded-bl-full bg-gradient-to-bl to-transparent"
+          >
+          </div>
           <div class="relative">
-            <div class="w-14 h-14 rounded-2xl bg-ns-ivory flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" /><path d="M12 18h.01" /></svg>
+            <div class="bg-ns-ivory mb-6 flex h-14 w-14 items-center justify-center rounded-2xl">
+              <svg
+                class="text-secondary h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                ><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M12 18h.01"
+                ></path></svg
+              >
             </div>
-            <h3 class="text-heading-6 font-medium mb-3">{t.features.onDevice}</h3>
+            <h3 class="text-heading-6 mb-3 font-medium">{t.features.onDevice}</h3>
             <p class="leading-relaxed">{t.features.onDeviceDesc}</p>
           </div>
         </div>
-        <div class="relative rounded-3xl bg-background-1 border border-stroke-2 p-8 overflow-hidden group hover:shadow-2 transition-all duration-500">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-ns-linen/20 to-transparent rounded-bl-full"></div>
+        <div
+          class="bg-background-1 border-stroke-2 group hover:shadow-2 relative overflow-hidden rounded-3xl border p-8 transition-all duration-500"
+        >
+          <div
+            class="from-ns-linen/20 absolute top-0 right-0 h-32 w-32 rounded-bl-full bg-gradient-to-bl to-transparent"
+          >
+          </div>
           <div class="relative">
-            <div class="w-14 h-14 rounded-2xl bg-ns-ivory flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" /></svg>
+            <div class="bg-ns-ivory mb-6 flex h-14 w-14 items-center justify-center rounded-2xl">
+              <svg
+                class="text-secondary h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"></path></svg
+              >
             </div>
-            <h3 class="text-heading-6 font-medium mb-3">{t.features.icloud}</h3>
+            <h3 class="text-heading-6 mb-3 font-medium">{t.features.icloud}</h3>
             <p class="leading-relaxed">{t.features.icloudDesc}</p>
           </div>
         </div>
-        <div class="relative rounded-3xl bg-background-1 border border-stroke-2 p-8 overflow-hidden group hover:shadow-2 transition-all duration-500">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-ns-linen/20 to-transparent rounded-bl-full"></div>
+        <div
+          class="bg-background-1 border-stroke-2 group hover:shadow-2 relative overflow-hidden rounded-3xl border p-8 transition-all duration-500"
+        >
+          <div
+            class="from-ns-linen/20 absolute top-0 right-0 h-32 w-32 rounded-bl-full bg-gradient-to-bl to-transparent"
+          >
+          </div>
           <div class="relative">
-            <div class="w-14 h-14 rounded-2xl bg-ns-ivory flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+            <div class="bg-ns-ivory mb-6 flex h-14 w-14 items-center justify-center rounded-2xl">
+              <svg
+                class="text-secondary h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                ><circle cx="12" cy="12" r="3"></circle><path
+                  d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                ></path></svg
+              >
             </div>
-            <h3 class="text-heading-6 font-medium mb-3">{t.features.cloudModels}</h3>
+            <h3 class="text-heading-6 mb-3 font-medium">{t.features.cloudModels}</h3>
             <p class="leading-relaxed">{t.features.cloudModelsDesc}</p>
           </div>
         </div>
@@ -108,32 +159,62 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
   </section>
 
   <!-- Platforms -->
-  <section class="py-20 md:py-32 bg-background-3">
+  <section class="bg-background-3 py-20 md:py-32">
     <div class="container-main">
-      <div class="text-center mb-16">
-        <h2 class="font-medium mb-4">{t.platforms.title}</h2>
+      <div class="mb-16 text-center">
+        <h2 class="mb-4 font-medium">{t.platforms.title}</h2>
         <p>{t.platforms.subtitle}</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-        <div class="text-center p-8">
-          <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6 shadow-1">
-            <svg class="w-10 h-10 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
+      <div class="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-3">
+        <div class="p-8 text-center">
+          <div
+            class="shadow-1 mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white"
+          >
+            <svg
+              class="text-secondary h-10 w-10"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              ><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"
+              ></path></svg
+            >
           </div>
-          <h3 class="text-heading-6 font-medium mb-2">{t.platforms.mac}</h3>
+          <h3 class="text-heading-6 mb-2 font-medium">{t.platforms.mac}</h3>
           <p>{t.platforms.macDesc}</p>
         </div>
-        <div class="text-center p-8">
-          <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6 shadow-1">
-            <svg class="w-10 h-10 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2" /><path d="M10 18h4" /></svg>
+        <div class="p-8 text-center">
+          <div
+            class="shadow-1 mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white"
+          >
+            <svg
+              class="text-secondary h-10 w-10"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              ><rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M10 18h4"
+              ></path></svg
+            >
           </div>
-          <h3 class="text-heading-6 font-medium mb-2">{t.platforms.ipad}</h3>
+          <h3 class="text-heading-6 mb-2 font-medium">{t.platforms.ipad}</h3>
           <p>{t.platforms.ipadDesc}</p>
         </div>
-        <div class="text-center p-8">
-          <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6 shadow-1">
-            <svg class="w-10 h-10 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" /><path d="M12 18h.01" /></svg>
+        <div class="p-8 text-center">
+          <div
+            class="shadow-1 mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white"
+          >
+            <svg
+              class="text-secondary h-10 w-10"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              ><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M12 18h.01"
+              ></path></svg
+            >
           </div>
-          <h3 class="text-heading-6 font-medium mb-2">{t.platforms.iphone}</h3>
+          <h3 class="text-heading-6 mb-2 font-medium">{t.platforms.iphone}</h3>
           <p>{t.platforms.iphoneDesc}</p>
         </div>
       </div>
@@ -141,11 +222,15 @@ const ctaText = hasAppStoreUrl ? t.nav.cta : t.nav.ctaFallback;
   </section>
 
   <!-- CTA -->
-  <section class="py-20 md:py-32 bg-ns-ivory">
+  <section class="bg-ns-ivory py-20 md:py-32">
     <div class="container-main text-center">
-      <h2 class="font-medium mb-4">{t.cta.title}</h2>
-      <p class="mb-10 text-tagline-1">{t.cta.subtitle}</p>
-      <a href={ctaUrl} class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-secondary text-white font-normal text-tagline-1 hover:scale-[1.02] transition-all duration-300 shadow-1" {...(!hasAppStoreUrl ? {} : { target: '_blank', rel: 'noopener noreferrer' })}>
+      <h2 class="mb-4 font-medium">{t.cta.title}</h2>
+      <p class="text-tagline-1 mb-10">{t.cta.subtitle}</p>
+      <a
+        href={ctaUrl}
+        class="bg-secondary text-tagline-1 shadow-1 inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 font-normal text-white transition-all duration-300 hover:scale-[1.02]"
+        {...!hasAppStoreUrl ? {} : { target: '_blank', rel: 'noopener noreferrer' }}
+      >
         {ctaText}
         <DottedArrowIcon class="size-4 text-white" />
       </a>

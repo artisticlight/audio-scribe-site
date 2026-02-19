@@ -12,20 +12,20 @@ Fixes all 26 issues from the code review at `reviews/review-20260216-2124.md`. C
 
 ## Section 1: Configuration & Build
 
-| File | Change |
-|------|--------|
-| `package.json` | Remove `@angular/material` from `devDependencies` |
-| `.gitignore` | Add `.env*` pattern |
-| `angular.json` | Add explicit `optimization` with `inlineCritical: true` to production config; add `standalone: true` to component schematic |
-| `src/app/app.config.ts` | Remove `provideClientHydration()` and its import |
+| File                    | Change                                                                                                                                  |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `package.json`          | Remove `@angular/material` from `devDependencies`                                                                                       |
+| `.gitignore`            | Add `.env*` pattern                                                                                                                     |
+| `angular.json`          | Add explicit `optimization` with `inlineCritical: true` to production config; add `standalone: true` to component schematic             |
+| `src/app/app.config.ts` | Remove `provideClientHydration()` and its import                                                                                        |
 | `src/app/app.routes.ts` | Add parent-level redirect `documentation` -> `documentation/getting-started` with `pathMatch: 'full'`; remove empty-path child redirect |
 
 ## Section 2: index.html — Fonts & Icons
 
-| File | Change |
-|------|--------|
+| File             | Change                                                                                                             |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `src/index.html` | Replace blocking Material Icons link with preloaded `Material+Symbols+Outlined&display=swap` and noscript fallback |
-| `src/index.html` | Trim Google Fonts to `Inter:wght@400;500;600` only, remove Roboto |
+| `src/index.html` | Trim Google Fonts to `Inter:wght@400;500;600` only, remove Roboto                                                  |
 
 Note: Verify icon name compatibility when switching from Material Icons to Material Symbols Outlined.
 

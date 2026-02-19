@@ -1,3 +1,5 @@
+@import '@fontsource/inter-tight/latin.css';
+@import '@fontsource/inter-tight/latin-italic.css';
 @import 'tailwindcss';
 
 /* ===== Design Tokens (from Nexsas template variables.css) ===== */
@@ -10,7 +12,7 @@
   --color-accent: #fcfcfc;
 
   /* Hero / warm linen tones */
-  --color-hero: #BFAB9A;
+  --color-hero: #bfab9a;
   --color-hero-light: #d4c4b5;
   --color-hero-dark: #a89279;
   --color-ns-linen: #beab9a;
@@ -102,7 +104,12 @@ body {
 }
 
 /* Base typography from template */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-inter-tight);
   color: var(--color-secondary);
 }
@@ -112,17 +119,47 @@ h1 {
   line-height: var(--text-heading-4--line-height);
   font-weight: 500;
 }
-@media (min-width: 640px) { h1 { font-size: var(--text-heading-3); line-height: var(--text-heading-3--line-height); } }
-@media (min-width: 768px) { h1 { font-size: var(--text-heading-2); line-height: var(--text-heading-2--line-height); } }
-@media (min-width: 1280px) { h1 { font-size: var(--text-heading-1); line-height: var(--text-heading-1--line-height); } }
+@media (min-width: 640px) {
+  h1 {
+    font-size: var(--text-heading-3);
+    line-height: var(--text-heading-3--line-height);
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--text-heading-2);
+    line-height: var(--text-heading-2--line-height);
+  }
+}
+@media (min-width: 1280px) {
+  h1 {
+    font-size: var(--text-heading-1);
+    line-height: var(--text-heading-1--line-height);
+  }
+}
 
 h2 {
   font-size: var(--text-heading-5);
   line-height: var(--text-heading-5--line-height);
 }
-@media (min-width: 640px) { h2 { font-size: var(--text-heading-4); line-height: var(--text-heading-4--line-height); } }
-@media (min-width: 768px) { h2 { font-size: var(--text-heading-3); line-height: var(--text-heading-3--line-height); } }
-@media (min-width: 1280px) { h2 { font-size: var(--text-heading-2); line-height: var(--text-heading-2--line-height); } }
+@media (min-width: 640px) {
+  h2 {
+    font-size: var(--text-heading-4);
+    line-height: var(--text-heading-4--line-height);
+  }
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: var(--text-heading-3);
+    line-height: var(--text-heading-3--line-height);
+  }
+}
+@media (min-width: 1280px) {
+  h2 {
+    font-size: var(--text-heading-2);
+    line-height: var(--text-heading-2--line-height);
+  }
+}
 
 p {
   font-size: var(--text-tagline-2);
@@ -297,7 +334,10 @@ p {
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0.3s;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    pointer-events 0s 0.3s;
   visibility: hidden;
 }
 
@@ -307,7 +347,10 @@ p {
   pointer-events: auto;
   transform: translateY(0);
   visibility: visible;
-  transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0s;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    pointer-events 0s 0s;
 }
 
 /* Focus states for accessibility */

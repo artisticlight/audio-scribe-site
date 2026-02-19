@@ -13,30 +13,44 @@ const lp = (path = '') => localePath(locale, path);
   <section class="page-shell min-h-screen pt-[132px] pb-24">
     <div class="container-main max-w-3xl">
       <div class="page-content-card p-8 md:p-12">
-        <h1 class="!text-heading-3 font-medium mb-4">{t.about.title.replace('{companyName}', SITE.companyName)}</h1>
+        <h1 class="!text-heading-3 mb-4 font-medium">
+          {t.about.title.replace('{companyName}', SITE.companyName)}
+        </h1>
         <p class="text-tagline-1 text-secondary/60 mb-8">
           {t.about.subtitle}
         </p>
 
         <div class="space-y-8">
           <div>
-            <h2 class="text-heading-5 font-medium mb-3">{t.about.missionTitle}</h2>
+            <h2 class="text-heading-5 mb-3 font-medium">{t.about.missionTitle}</h2>
             <p class="text-tagline-1 text-secondary/60 leading-relaxed">
-              {t.about.missionDesc.replace('{companyName}', SITE.companyName).replace('{appName}', SITE.appName)}
+              {
+                t.about.missionDesc
+                  .replace('{companyName}', SITE.companyName)
+                  .replace('{appName}', SITE.appName)
+              }
             </p>
           </div>
 
           <div>
-            <h2 class="text-heading-5 font-medium mb-3">{t.about.privacyTitle}</h2>
+            <h2 class="text-heading-5 mb-3 font-medium">{t.about.privacyTitle}</h2>
             <p class="text-tagline-1 text-secondary/60 leading-relaxed">
-              {t.about.privacyDesc.replace('{companyName}', SITE.companyName).replace('{appName}', SITE.appName)}
+              {
+                t.about.privacyDesc
+                  .replace('{companyName}', SITE.companyName)
+                  .replace('{appName}', SITE.appName)
+              }
             </p>
           </div>
 
           <div>
-            <h2 class="text-heading-5 font-medium mb-3">{t.about.ecosystemTitle}</h2>
+            <h2 class="text-heading-5 mb-3 font-medium">{t.about.ecosystemTitle}</h2>
             <p class="text-tagline-1 text-secondary/60 leading-relaxed">
-              {t.about.ecosystemDesc.replace('{companyName}', SITE.companyName).replace('{appName}', SITE.appName)}
+              {
+                t.about.ecosystemDesc
+                  .replace('{companyName}', SITE.companyName)
+                  .replace('{appName}', SITE.appName)
+              }
             </p>
           </div>
         </div>

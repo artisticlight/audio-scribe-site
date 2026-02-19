@@ -5,7 +5,7 @@ lastUpdated: 2026-02-17
 
 # Conditions Générales d'Utilisation
 
-*Dernière mise à jour : 17 février 2026*
+_Dernière mise à jour : 17 février 2026_
 
 En utilisant Audio Scribe, vous acceptez les présentes conditions.
 

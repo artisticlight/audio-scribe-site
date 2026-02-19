@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { collectionName, defaultLocale, getTranslations, localeLabels, localePath } from '../../src/i18n/utils';
+import {
+  collectionName,
+  defaultLocale,
+  getTranslations,
+  localeLabels,
+  localePath,
+} from '../../src/i18n/utils';
 
 describe('i18n utils', () => {
   it('falls back to English translations for unknown locales', () => {
@@ -13,7 +19,9 @@ describe('i18n utils', () => {
   it('builds locale-aware paths using configured base URL', () => {
     const base = '/audio-scribe-site/';
     expect(localePath(defaultLocale, '', base)).toBe('/audio-scribe-site/');
-    expect(localePath('en', 'docs/getting-started/', base)).toBe('/audio-scribe-site/docs/getting-started/');
+    expect(localePath('en', 'docs/getting-started/', base)).toBe(
+      '/audio-scribe-site/docs/getting-started/',
+    );
     expect(localePath('es', '/docs/', base)).toBe('/audio-scribe-site/es/docs/');
     expect(localePath('fr', 'support/', base)).toBe('/audio-scribe-site/fr/support/');
   });

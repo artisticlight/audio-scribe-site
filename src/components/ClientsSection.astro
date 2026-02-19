@@ -40,30 +40,37 @@ const logos = [
 
       <div class="clients-marquee mt-14" role="img" aria-label={copy.marqueeAria}>
         <div class="clients-track">
-          {logos.map((logo) => (
-            <figure class:list={['clients-logo-figure', logo.widthClass]}>
-              <img
-                src={`${assetBase}${logo.file}`}
-                alt={`${logo.name} logo`}
-                width={logo.width}
-                height="45"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          ))}
-          {logos.map((logo) => (
-            <figure class:list={['clients-logo-figure', 'clients-logo-duplicate', logo.widthClass]} aria-hidden="true">
-              <img
-                src={`${assetBase}${logo.file}`}
-                alt=""
-                width={logo.width}
-                height="45"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          ))}
+          {
+            logos.map((logo) => (
+              <figure class:list={['clients-logo-figure', logo.widthClass]}>
+                <img
+                  src={`${assetBase}${logo.file}`}
+                  alt={`${logo.name} logo`}
+                  width={logo.width}
+                  height="45"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            ))
+          }
+          {
+            logos.map((logo) => (
+              <figure
+                class:list={['clients-logo-figure', 'clients-logo-duplicate', logo.widthClass]}
+                aria-hidden="true"
+              >
+                <img
+                  src={`${assetBase}${logo.file}`}
+                  alt=""
+                  width={logo.width}
+                  height="45"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            ))
+          }
         </div>
       </div>
 

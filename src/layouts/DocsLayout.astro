@@ -28,36 +28,44 @@ const sortedDocs = allDocs.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?
 <BaseLayout title={title} description={description}>
   <section class="page-shell min-h-screen pt-[132px] pb-24">
     <div class="container-main">
-      <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
         <!-- Sidebar -->
         <aside class="hidden lg:block">
           <nav aria-label={t.docs.sidebar} class="sticky top-28">
-            <div class="space-y-1 rounded-2xl border border-stroke-10/75 bg-white/70 p-3 backdrop-blur-sm shadow-1">
-              <p class="text-tagline-2 text-secondary/60 font-medium px-3 mb-3">{t.docs.sidebar}</p>
-              {sortedDocs.map((doc) => (
-                <a
-                  href={lp(`docs/${doc.id}/`)}
-                  class:list={[
-                    'block rounded-xl px-3 py-2 text-tagline-1 font-normal transition-colors duration-200',
-                    Astro.url.pathname.includes(doc.id)
-                      ? 'bg-white text-secondary shadow-1'
-                      : 'text-secondary/60 hover:bg-white/50 hover:text-secondary',
-                  ]}
-                >
-                  {doc.data.title}
-                </a>
-              ))}
+            <div
+              class="border-stroke-10/75 shadow-1 space-y-1 rounded-2xl border bg-white/70 p-3 backdrop-blur-sm"
+            >
+              <p class="text-tagline-2 text-secondary/60 mb-3 px-3 font-medium">{t.docs.sidebar}</p>
+              {
+                sortedDocs.map((doc) => (
+                  <a
+                    href={lp(`docs/${doc.id}/`)}
+                    class:list={[
+                      'text-tagline-1 block rounded-xl px-3 py-2 font-normal transition-colors duration-200',
+                      Astro.url.pathname.includes(doc.id)
+                        ? 'text-secondary shadow-1 bg-white'
+                        : 'text-secondary/60 hover:text-secondary hover:bg-white/50',
+                    ]}
+                  >
+                    {doc.data.title}
+                  </a>
+                ))
+              }
             </div>
 
-            <div class="mt-6 space-y-1 rounded-2xl border border-stroke-10/75 bg-white/70 p-3 backdrop-blur-sm shadow-1">
-              <p class="text-tagline-2 text-secondary/60 font-medium px-3 mb-3">{t.docs.legalSidebar}</p>
+            <div
+              class="border-stroke-10/75 shadow-1 mt-6 space-y-1 rounded-2xl border bg-white/70 p-3 backdrop-blur-sm"
+            >
+              <p class="text-tagline-2 text-secondary/60 mb-3 px-3 font-medium">
+                {t.docs.legalSidebar}
+              </p>
               <a
                 href={lp('legal/privacy/')}
                 class:list={[
-                  'block rounded-xl px-3 py-2 text-tagline-1 font-normal transition-colors duration-200',
+                  'text-tagline-1 block rounded-xl px-3 py-2 font-normal transition-colors duration-200',
                   Astro.url.pathname.includes('legal/privacy')
-                    ? 'bg-white text-secondary shadow-1'
-                    : 'text-secondary/60 hover:bg-white/50 hover:text-secondary',
+                    ? 'text-secondary shadow-1 bg-white'
+                    : 'text-secondary/60 hover:text-secondary hover:bg-white/50',
                 ]}
               >
                 {t.megaMenu.privacy}
@@ -65,10 +73,10 @@ const sortedDocs = allDocs.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?
               <a
                 href={lp('legal/terms/')}
                 class:list={[
-                  'block rounded-xl px-3 py-2 text-tagline-1 font-normal transition-colors duration-200',
+                  'text-tagline-1 block rounded-xl px-3 py-2 font-normal transition-colors duration-200',
                   Astro.url.pathname.includes('legal/terms')
-                    ? 'bg-white text-secondary shadow-1'
-                    : 'text-secondary/60 hover:bg-white/50 hover:text-secondary',
+                    ? 'text-secondary shadow-1 bg-white'
+                    : 'text-secondary/60 hover:text-secondary hover:bg-white/50',
                 ]}
               >
                 {t.megaMenu.terms}
@@ -76,10 +84,10 @@ const sortedDocs = allDocs.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?
               <a
                 href={lp('legal/gdpr/')}
                 class:list={[
-                  'block rounded-xl px-3 py-2 text-tagline-1 font-normal transition-colors duration-200',
+                  'text-tagline-1 block rounded-xl px-3 py-2 font-normal transition-colors duration-200',
                   Astro.url.pathname.includes('legal/gdpr')
-                    ? 'bg-white text-secondary shadow-1'
-                    : 'text-secondary/60 hover:bg-white/50 hover:text-secondary',
+                    ? 'text-secondary shadow-1 bg-white'
+                    : 'text-secondary/60 hover:text-secondary hover:bg-white/50',
                 ]}
               >
                 {t.megaMenu.gdpr}

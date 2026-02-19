@@ -5,7 +5,7 @@ lastUpdated: 2026-02-17
 
 # Privacy Policy
 
-*Last updated: February 17, 2026*
+_Last updated: February 17, 2026_
 
 Your privacy is important to us. This policy explains what data Audio Scribe collects, how it's used, and your rights.
 

@@ -64,7 +64,12 @@ const legal_fr = defineCollection({
 });
 
 export const collections = {
-  docs, legal, changelog, tutorials,
-  docs_es, legal_es,
-  docs_fr, legal_fr,
+  docs,
+  legal,
+  changelog,
+  tutorials,
+  docs_es,
+  legal_es,
+  docs_fr,
+  legal_fr,
 };

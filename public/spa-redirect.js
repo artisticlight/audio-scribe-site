@@ -14,4 +14,4 @@
   if (candidatePath.startsWith('/audio-scribe-site') && !candidatePath.startsWith('//')) {
     window.history.replaceState(null, '', candidatePath);
   }
-}(window.location));
+})(window.location);

@@ -5,7 +5,7 @@ lastUpdated: 2026-02-17
 
 # Terms & Conditions
 
-*Last updated: February 17, 2026*
+_Last updated: February 17, 2026_
 
 By using Audio Scribe, you agree to these terms.
 

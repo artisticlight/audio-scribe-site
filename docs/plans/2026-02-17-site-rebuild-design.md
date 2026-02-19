@@ -2,7 +2,7 @@
 
 **Date:** 2026-02-17 (revised 2026-02-18)
 **Company:** Artistic Forge
-**App Name:** Audio Scribe *(placeholder — will change; centralized in `src/config.ts`)*
+**App Name:** Audio Scribe _(placeholder — will change; centralized in `src/config.ts`)_
 **Template Reference:** [Nexsas HTML/Tailwind Template](https://themeforest.net/item/nextsaas-saas-software-startup-tailwind-template/59358848)
 **Live Reference:** [next-sass-html.vercel.app](https://next-sass-html.vercel.app/)
 **Revision Note:** Merged from original design + Codex review. Incorporates deployment config, i18n model, accessibility contract, CTA fallback, CI gates, and performance policy from Codex. Retains full animation stack (GSAP + ScrollTrigger + Lenis + Springer) per owner requirement to match template feel exactly.
@@ -19,13 +19,13 @@ The app is an iOS/macOS voice transcription tool available on the Apple App Stor
 
 ## 2. Tech Stack
 
-| Layer | Choice | Rationale |
-| ----- | ------ | --------- |
-| Framework | **Astro 5** (SSG) | Purpose-built for content/marketing sites. JS only via interactive islands. |
-| Styling | **Tailwind CSS 4** | Utility-first, matches template source directly. |
-| Content | **Markdown / MDX** | Docs, release notes, tutorials authored as `.md` files. |
-| i18n | **Astro i18n routing** | English default (`/`), Spanish (`/es/`), French (`/fr/`). |
-| Deployment | **GitHub Pages** via GitHub Actions | `astro build` output deployed on push to `main`. |
+| Layer      | Choice                                      | Rationale                                                                      |
+| ---------- | ------------------------------------------- | ------------------------------------------------------------------------------ |
+| Framework  | **Astro 5** (SSG)                           | Purpose-built for content/marketing sites. JS only via interactive islands.    |
+| Styling    | **Tailwind CSS 4**                          | Utility-first, matches template source directly.                               |
+| Content    | **Markdown / MDX**                          | Docs, release notes, tutorials authored as `.md` files.                        |
+| i18n       | **Astro i18n routing**                      | English default (`/`), Spanish (`/es/`), French (`/fr/`).                      |
+| Deployment | **GitHub Pages** via GitHub Actions         | `astro build` output deployed on push to `main`.                               |
 | Animations | **GSAP + ScrollTrigger + Lenis + Springer** | Full template animation stack. CSS where sufficient, GSAP for complex effects. |
 
 ### Routing and Deployment Base
@@ -95,7 +95,8 @@ export const SITE = {
   supportEmail: 'support@audioscribe.app',
   privacyEmail: 'privacy@audioscribe.app',
   appStoreUrl: '',
-  launchUpdatesUrl: 'mailto:support@audioscribe.app?subject=Notify%20me%20when%20Audio%20Scribe%20launches',
+  launchUpdatesUrl:
+    'mailto:support@audioscribe.app?subject=Notify%20me%20when%20Audio%20Scribe%20launches',
   social: { twitter: '', facebook: '', instagram: '' },
   logoPath: '/assets/logo.png',
   appStoreBadgePath: '/assets/app-store-badge.svg',
@@ -118,16 +119,16 @@ Not dark tech. Warm, organic, premium — like a high-end creative agency. Light
 
 ### Color System
 
-| Token | Value | Usage |
-| ----- | ----- | ----- |
-| Hero background | `#BFAB9A` | Hero section fill, warm beige/champagne |
-| Body background | `#FFFFFF` | Primary content areas |
-| Page background | `#F5F5F8` | Inner pages (docs, support, about, legal) |
-| Accent | `#BFAB9A` + variations | Highlighted words, decorative elements, badges |
-| Dark cards | `#1A1A1A` / near-black | Contact cards, emphasis blocks |
-| Text primary | `#1A1A1A` | Body text on light backgrounds |
-| Text on hero | `#FFFFFF` | Text overlaid on hero and dark surfaces |
-| Trust column bg | `~#F5F3EF` | Warm-tinted background for Trust & Compliance mega menu column |
+| Token           | Value                  | Usage                                                          |
+| --------------- | ---------------------- | -------------------------------------------------------------- |
+| Hero background | `#BFAB9A`              | Hero section fill, warm beige/champagne                        |
+| Body background | `#FFFFFF`              | Primary content areas                                          |
+| Page background | `#F5F5F8`              | Inner pages (docs, support, about, legal)                      |
+| Accent          | `#BFAB9A` + variations | Highlighted words, decorative elements, badges                 |
+| Dark cards      | `#1A1A1A` / near-black | Contact cards, emphasis blocks                                 |
+| Text primary    | `#1A1A1A`              | Body text on light backgrounds                                 |
+| Text on hero    | `#FFFFFF`              | Text overlaid on hero and dark surfaces                        |
+| Trust column bg | `~#F5F3EF`             | Warm-tinted background for Trust & Compliance mega menu column |
 
 ### Typography
 
@@ -218,43 +219,43 @@ Documentation category cards feature soft warm-toned gradient blobs in corners.
 
 ### Top-Level Nav
 
-| Position | Item | Type |
-| -------- | ---- | ---- |
-| Left | Logo + App Name | Home link |
-| Center | Product | Dropdown *(placeholder — TBD)* |
-| Center | Resources | **Mega menu** (see below) |
-| Center | Company | Dropdown *(placeholder — TBD)* |
-| Right | Get it on the App Store | Pill CTA button (or "Get Launch Updates" per fallback) |
+| Position | Item                    | Type                                                   |
+| -------- | ----------------------- | ------------------------------------------------------ |
+| Left     | Logo + App Name         | Home link                                              |
+| Center   | Product                 | Dropdown _(placeholder — TBD)_                         |
+| Center   | Resources               | **Mega menu** (see below)                              |
+| Center   | Company                 | Dropdown _(placeholder — TBD)_                         |
+| Right    | Get it on the App Store | Pill CTA button (or "Get Launch Updates" per fallback) |
 
 ### Resources Mega Menu
 
 Three-column dropdown matching Nexsas layout. Smooth slide-down animation with backdrop blur.
 
-**Column 1 — Help & Documentation** *(white background)*
+**Column 1 — Help & Documentation** _(white background)_
 
-| Item | Icon | Description |
-| ---- | ---- | ----------- |
-| Documentation | doc-add icon | Detailed documentation of the product. |
-| Tutorials | chat-bubble icon | Step-by-step guides to help you get started. |
-| FAQ | question icon | Frequently asked questions and answers. |
-| Support | headset icon | Get help and support from our team. |
+| Item          | Icon             | Description                                  |
+| ------------- | ---------------- | -------------------------------------------- |
+| Documentation | doc-add icon     | Detailed documentation of the product.       |
+| Tutorials     | chat-bubble icon | Step-by-step guides to help you get started. |
+| FAQ           | question icon    | Frequently asked questions and answers.      |
+| Support       | headset icon     | Get help and support from our team.          |
 
-**Column 2 — Knowledge & Research** *(white background)*
+**Column 2 — Knowledge & Research** _(white background)_
 
-| Item | Icon | Description |
-| ---- | ---- | ----------- |
+| Item      | Icon           | Description                                                       |
+| --------- | -------------- | ----------------------------------------------------------------- |
 | Use Cases | lightbulb icon | Explore real-world scenarios where Audio Scribe delivers results. |
-| Analytics | chart icon | Dive into performance metrics and data insights. |
-| Changelog | update icon | Stay updated with the latest changes and improvements. |
+| Analytics | chart icon     | Dive into performance metrics and data insights.                  |
+| Changelog | update icon    | Stay updated with the latest changes and improvements.            |
 
-**Column 3 — Trust & Compliance** *(warm-tinted background ~#F5F3EF)*
+**Column 3 — Trust & Compliance** _(warm-tinted background ~#F5F3EF)_
 
-| Item | Icon | Description |
-| ---- | ---- | ----------- |
-| Security | shield-check icon | How we protect your data. |
-| GDPR Compliance | person-lock icon | EU data protection compliance. |
-| Privacy Policy | shield icon | How we handle your information. |
-| Terms & Conditions | dollar icon | Terms of service. |
+| Item               | Icon              | Description                     |
+| ------------------ | ----------------- | ------------------------------- |
+| Security           | shield-check icon | How we protect your data.       |
+| GDPR Compliance    | person-lock icon  | EU data protection compliance.  |
+| Privacy Policy     | shield icon       | How we handle your information. |
+| Terms & Conditions | dollar icon       | Terms of service.               |
 
 ### Mobile Navigation
 
@@ -412,13 +413,13 @@ Per-locale content collections:
 
 Mobile-first throughout. Single-column layouts below 768px.
 
-| Breakpoint | Layout |
-| ---------- | ------ |
-| < 640px | Single column, hamburger nav, stacked cards |
-| 640-768px | Two-column grids where appropriate |
+| Breakpoint | Layout                                          |
+| ---------- | ----------------------------------------------- |
+| < 640px    | Single column, hamburger nav, stacked cards     |
+| 640-768px  | Two-column grids where appropriate              |
 | 768-1024px | Sidebar nav appears in docs, three-column grids |
-| > 1024px | Full desktop layout, mega menu dropdowns |
-| > 1440px | `lp:` breakpoint from template for wide layouts |
+| > 1024px   | Full desktop layout, mega menu dropdowns        |
+| > 1440px   | `lp:` breakpoint from template for wide layouts |
 
 Touch-friendly tap targets (44px minimum). No hover-dependent interactions on mobile.
 
@@ -430,8 +431,8 @@ Documentation, release notes, tutorials, and legal pages are Markdown files with
 
 ```md
 ---
-title: "Getting Started"
-description: "Set up Audio Scribe on your Apple devices"
+title: 'Getting Started'
+description: 'Set up Audio Scribe on your Apple devices'
 lastUpdated: 2026-02-17
 ---
 
@@ -493,21 +494,21 @@ GitHub Actions workflow (runs on PR to `main` and push to `main`):
 
 ### Key Page Components (in `src/components/pages/ai-voice-generator/`)
 
-| Page | Component File |
-| ---- | -------------- |
-| Home hero | `hero.htm` + `hero-voice.htm` |
-| Documentation | referenced from `ai-voice-generator-documentation.html` |
-| Support/Contact | referenced from `ai-voice-generator-support.html` |
-| About | referenced from `ai-voice-generator-about.html` |
-| FAQ | referenced from `ai-voice-generator-faq.html` |
-| Security | referenced from `ai-voice-generator-security.html` |
-| GDPR | referenced from `ai-voice-generator-gdpr.html` |
-| Privacy | referenced from `ai-voice-generator-privacy-policy.html` |
-| Terms | referenced from `ai-voice-generator-terms-conditions.html` |
-| Changelog | referenced from `ai-voice-generator-changelog.html` |
-| Tutorials | referenced from `ai-voice-generator-tutorial.html` |
-| Use Cases | referenced from `ai-voice-generator-use-case.html` |
-| Analytics | referenced from `ai-voice-generator-analytics.html` |
+| Page            | Component File                                             |
+| --------------- | ---------------------------------------------------------- |
+| Home hero       | `hero.htm` + `hero-voice.htm`                              |
+| Documentation   | referenced from `ai-voice-generator-documentation.html`    |
+| Support/Contact | referenced from `ai-voice-generator-support.html`          |
+| About           | referenced from `ai-voice-generator-about.html`            |
+| FAQ             | referenced from `ai-voice-generator-faq.html`              |
+| Security        | referenced from `ai-voice-generator-security.html`         |
+| GDPR            | referenced from `ai-voice-generator-gdpr.html`             |
+| Privacy         | referenced from `ai-voice-generator-privacy-policy.html`   |
+| Terms           | referenced from `ai-voice-generator-terms-conditions.html` |
+| Changelog       | referenced from `ai-voice-generator-changelog.html`        |
+| Tutorials       | referenced from `ai-voice-generator-tutorial.html`         |
+| Use Cases       | referenced from `ai-voice-generator-use-case.html`         |
+| Analytics       | referenced from `ai-voice-generator-analytics.html`        |
 
 ---
 

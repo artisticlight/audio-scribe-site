@@ -11,23 +11,29 @@ const lp = (path = '') => localePath('fr', path);
   <section class="page-shell min-h-screen pt-[132px] pb-24">
     <div class="container-main max-w-3xl">
       <div class="page-content-card p-8 md:p-12">
-        <h1 class="!text-heading-3 font-medium mb-4">{t.support.title}</h1>
+        <h1 class="!text-heading-3 mb-4 font-medium">{t.support.title}</h1>
         <p class="text-tagline-1 text-secondary/60 mb-8">
           {t.support.subtitle}
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
           <!-- General Support -->
           <a
             href={`mailto:${SITE.supportEmail}`}
             class="group page-grid-card block p-6 transition-all duration-300 hover:-translate-y-0.5"
           >
-            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+            <div class="bg-ns-ivory mb-4 flex h-12 w-12 items-center justify-center rounded-xl">
+              <svg
+                class="text-secondary h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path>
               </svg>
             </div>
-            <h3 class="text-heading-6 font-medium mb-2">{t.support.general}</h3>
+            <h3 class="text-heading-6 mb-2 font-medium">{t.support.general}</h3>
             <p class="text-tagline-2 text-secondary/60">{SITE.supportEmail}</p>
           </a>
 
@@ -36,12 +42,19 @@ const lp = (path = '') => localePath('fr', path);
             href={`mailto:${SITE.bugsEmail}`}
             class="group page-grid-card block p-6 transition-all duration-300 hover:-translate-y-0.5"
           >
-            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            <div class="bg-ns-ivory mb-4 flex h-12 w-12 items-center justify-center rounded-xl">
+              <svg
+                class="text-secondary h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"
+                ></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
               </svg>
             </div>
-            <h3 class="text-heading-6 font-medium mb-2">{t.support.bugs}</h3>
+            <h3 class="text-heading-6 mb-2 font-medium">{t.support.bugs}</h3>
             <p class="text-tagline-2 text-secondary/60">{SITE.bugsEmail}</p>
           </a>
 
@@ -50,12 +63,20 @@ const lp = (path = '') => localePath('fr', path);
             href={`mailto:${SITE.featuresEmail}`}
             class="group page-grid-card block p-6 transition-all duration-300 hover:-translate-y-0.5"
           >
-            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            <div class="bg-ns-ivory mb-4 flex h-12 w-12 items-center justify-center rounded-xl">
+              <svg
+                class="text-secondary h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                ></polygon>
               </svg>
             </div>
-            <h3 class="text-heading-6 font-medium mb-2">{t.support.featureRequests}</h3>
+            <h3 class="text-heading-6 mb-2 font-medium">{t.support.featureRequests}</h3>
             <p class="text-tagline-2 text-secondary/60">{SITE.featuresEmail}</p>
           </a>
 
@@ -64,12 +85,18 @@ const lp = (path = '') => localePath('fr', path);
             href={`mailto:${SITE.privacyEmail}`}
             class="group page-grid-card block p-6 transition-all duration-300 hover:-translate-y-0.5"
           >
-            <div class="w-12 h-12 rounded-xl bg-ns-ivory flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <div class="bg-ns-ivory mb-4 flex h-12 w-12 items-center justify-center rounded-xl">
+              <svg
+                class="text-secondary h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
             </div>
-            <h3 class="text-heading-6 font-medium mb-2">{t.support.privacyInquiries}</h3>
+            <h3 class="text-heading-6 mb-2 font-medium">{t.support.privacyInquiries}</h3>
             <p class="text-tagline-2 text-secondary/60">{SITE.privacyEmail}</p>
           </a>
         </div>

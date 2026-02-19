@@ -5,7 +5,7 @@ lastUpdated: 2026-02-17
 
 # Política de Privacidad
 
-*Última actualización: 17 de febrero de 2026*
+_Última actualización: 17 de febrero de 2026_
 
 Tu privacidad es importante para nosotros. Esta política explica qué datos recopila Audio Scribe, cómo se utilizan y cuáles son tus derechos.
 
