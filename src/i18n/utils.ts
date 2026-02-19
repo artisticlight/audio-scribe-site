@@ -32,8 +32,12 @@ export function getTranslations(locale: string | undefined): Dictionary {
  *  - Spanish:           `/audio-scribe-site/es/`
  *  - French:            `/audio-scribe-site/fr/`
  */
-export function localePath(locale: string | undefined, path = ''): string {
-  const base = import.meta.env.BASE_URL; // already has trailing slash
+export function localePath(
+  locale: string | undefined,
+  path = '',
+  baseUrl = import.meta.env.BASE_URL,
+): string {
+  const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
   const prefix = locale && locale !== defaultLocale ? `${locale}/` : '';
   const clean = path.replace(/^\//, '');
   return `${base}${prefix}${clean}`;

@@ -1,5 +1,6 @@
 # Build output
 dist/
+coverage/
 
 # Node
 node_modules/
@@ -27,3 +28,7 @@ Thumbs.db
 
 # Claude
 .claude/
+
+# Test artifacts
+playwright-report/
+test-results/
