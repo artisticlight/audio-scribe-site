@@ -7,6 +7,13 @@
     "cta": "Télécharger sur l'App Store",
     "ctaFallback": "Recevoir les nouveautés"
   },
+  "announcement": {
+    "ariaLabel": "Annonce du site",
+    "prefix": "Améliorez vos transcriptions avec notre dernière version.",
+    "linkText": "Voir les nouveautés",
+    "suffix": "d'Audio Scribe.",
+    "closeLabel": "Masquer l'annonce"
+  },
   "megaMenu": {
     "helpDocs": "Aide et documentation",
     "knowledge": "Connaissances et recherche",
