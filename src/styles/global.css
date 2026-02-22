@@ -101,6 +101,7 @@ body {
   background-color: var(--color-surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --announcement-height: 0px;
 }
 
 /* Base typography from template */
@@ -319,6 +320,15 @@ p {
   }
 }
 
+/* Default header offset */
+.header-bar {
+  top: 1.25rem;
+}
+
+body.has-announcement .header-bar {
+  top: calc(var(--announcement-height) + 1.25rem);
+}
+
 /* Navigation menu animation states */
 .header-bar.scroll-ai-voice-header {
   top: 0.5rem !important;
@@ -327,6 +337,11 @@ p {
 
 .header-bar.scroll-inner-header-offset {
   top: 0.5rem !important;
+}
+
+body.has-announcement .header-bar.scroll-ai-voice-header,
+body.has-announcement .header-bar.scroll-inner-header-offset {
+  top: calc(var(--announcement-height) + 0.5rem) !important;
 }
 
 .mega-menu,
