@@ -1,0 +1,240 @@
+---
+import { getTranslations, localePath } from '../i18n/utils';
+import type { Locale } from '../i18n/utils';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = getTranslations(locale);
+const lp = (path = '') => localePath(locale, path);
+---
+
+<aside
+  id="announcement-bar"
+  class="announcement-bar"
+  aria-label={t.announcement.ariaLabel}
+  data-reveal
+  data-reveal-instant="true"
+  data-reveal-direction="down"
+  data-reveal-distance="16"
+  data-reveal-duration="0.55"
+>
+  <div class="announcement-inner container-main">
+    <div class="announcement-viewport">
+      <div class="announcement-ticker">
+        <div class="announcement-track">
+          <span>{t.announcement.prefix}</span>
+          <a href={lp('docs/changelog/')} class="announcement-link">{t.announcement.linkText}</a>
+          <span>{t.announcement.suffix}</span>
+        </div>
+        <div class="announcement-track" aria-hidden="true">
+          <span>{t.announcement.prefix}</span>
+          <a href={lp('docs/changelog/')} class="announcement-link">{t.announcement.linkText}</a>
+          <span>{t.announcement.suffix}</span>
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="announcement-close"
+      aria-label={t.announcement.closeLabel}
+      data-announcement-close
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        aria-hidden="true"
+      >
+        <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"></path>
+      </svg>
+    </button>
+  </div>
+</aside>
+
+<style>
+  .announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 60;
+    width: 100%;
+    border-bottom: 1px solid rgba(26, 26, 28, 0.1);
+    background: color-mix(in srgb, var(--color-ns-ivory) 82%, white 18%);
+    backdrop-filter: blur(8px);
+  }
+
+  .announcement-inner {
+    position: relative;
+    display: flex;
+    min-height: 2.25rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .announcement-viewport {
+    width: 100%;
+    overflow: hidden;
+    padding-right: 2.25rem;
+  }
+
+  .announcement-ticker {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 2rem;
+    animation: announcement-scroll 34s linear infinite;
+    will-change: transform;
+  }
+
+  .announcement-track {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    white-space: nowrap;
+    color: color-mix(in srgb, var(--color-secondary) 74%, white 26%);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+  }
+
+  .announcement-link {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s ease;
+  }
+
+  .announcement-link:hover {
+    opacity: 0.75;
+  }
+
+  .announcement-close {
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    display: inline-flex;
+    height: 1.35rem;
+    width: 1.35rem;
+    transform: translateY(-50%);
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    color: color-mix(in srgb, var(--color-secondary) 64%, white 36%);
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .announcement-close:hover {
+    background: rgba(26, 26, 28, 0.06);
+    color: var(--color-secondary);
+  }
+
+  .announcement-close svg {
+    height: 0.8rem;
+    width: 0.8rem;
+  }
+
+  @keyframes announcement-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 1rem));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .announcement-inner {
+      min-height: 2rem;
+    }
+
+    .announcement-track {
+      font-size: 0.75rem;
+    }
+
+    .announcement-close {
+      right: 0.95rem;
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .announcement-ticker {
+      width: 100%;
+      animation: none;
+      justify-content: center;
+    }
+
+    .announcement-track[aria-hidden='true'] {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const STORAGE_KEY = 'audio-scribe:announcement-dismissed:v1';
+
+  const setAnnouncementOffset = (valuePx: string) => {
+    document.body.style.setProperty('--announcement-height', valuePx);
+  };
+
+  const syncAnnouncement = () => {
+    const bar = document.querySelector('#announcement-bar');
+    if (!(bar instanceof HTMLElement)) return;
+
+    const dismissed = window.localStorage.getItem(STORAGE_KEY) === '1';
+    if (dismissed) {
+      bar.hidden = true;
+      document.body.classList.remove('has-announcement');
+      setAnnouncementOffset('0px');
+      return;
+    }
+
+    bar.hidden = false;
+    document.body.classList.add('has-announcement');
+    setAnnouncementOffset(`${bar.offsetHeight}px`);
+  };
+
+  const bindDismiss = () => {
+    const bar = document.querySelector('#announcement-bar');
+    if (!(bar instanceof HTMLElement)) return;
+    if (bar.dataset.announcementDismissBound === '1') return;
+    bar.dataset.announcementDismissBound = '1';
+
+    const closeButton = bar.querySelector('[data-announcement-close]');
+    closeButton?.addEventListener('click', () => {
+      window.localStorage.setItem(STORAGE_KEY, '1');
+      bar.hidden = true;
+      document.body.classList.remove('has-announcement');
+      setAnnouncementOffset('0px');
+    });
+  };
+
+  const initAnnouncement = () => {
+    syncAnnouncement();
+    bindDismiss();
+
+    if (document.documentElement.dataset.announcementResizeBound !== '1') {
+      window.addEventListener(
+        'resize',
+        () => {
+          const bar = document.querySelector('#announcement-bar');
+          if (!(bar instanceof HTMLElement) || bar.hidden) return;
+          setAnnouncementOffset(`${bar.offsetHeight}px`);
+        },
+        { passive: true },
+      );
+      document.documentElement.dataset.announcementResizeBound = '1';
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnnouncement, { once: true });
+  } else {
+    initAnnouncement();
+  }
+
+  document.addEventListener('astro:after-swap', initAnnouncement);
+</script>
