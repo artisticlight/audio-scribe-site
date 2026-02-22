@@ -7,6 +7,13 @@
     "cta": "Get it on the App Store",
     "ctaFallback": "Get Launch Updates"
   },
+  "announcement": {
+    "ariaLabel": "Site announcement",
+    "prefix": "Build better transcripts with our latest release.",
+    "linkText": "See what's new",
+    "suffix": "in Audio Scribe.",
+    "closeLabel": "Dismiss announcement"
+  },
   "megaMenu": {
     "helpDocs": "Help & Documentation",
     "knowledge": "Knowledge & Research",
