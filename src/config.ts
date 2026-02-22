@@ -5,13 +5,13 @@
 const _SITE = {
   appName: 'Audio Scribe',
   companyName: 'Artistic Forge',
-  supportEmail: 'support@audioscribe.app',
-  privacyEmail: 'privacy@audioscribe.app',
-  bugsEmail: 'bugs@audioscribe.app',
-  featuresEmail: 'features@audioscribe.app',
+  supportEmail: 'support@artisticforge.studio',
+  privacyEmail: 'privacy@artisticforge.studio',
+  bugsEmail: 'bugs@artisticforge.studio',
+  featuresEmail: 'features@artisticforge.studio',
   appStoreUrl: '',
   launchUpdatesUrl:
-    'mailto:support@audioscribe.app?subject=Notify%20me%20when%20Audio%20Scribe%20launches',
+    'mailto:support@artisticforge.studio?subject=Notify%20me%20when%20Audio%20Scribe%20launches',
   social: {
     twitter: '',
     facebook: '',
